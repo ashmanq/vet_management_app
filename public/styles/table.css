@@ -9,9 +9,16 @@ tbody {
   align-items: center;
 }
 
-/* tr {
-  border-radius: 10px;
-} */
+.display_list {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.display_list a {
+  text-decoration: none;
+}
 
 tr:nth-child(even) {
   background-color: #f2f2f2;

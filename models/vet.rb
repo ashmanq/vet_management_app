@@ -71,15 +71,15 @@ class Vet
     return result.map {|vet| Vet.new(vet)}
   end
 
-  def pets()
-    sql = "SELECT pets.* FROM pets
+  def animals()
+    sql = "SELECT animals.* FROM animals
            INNER JOIN vets
-           ON pets.vet_id = vets.id
+           ON animals.vet_id = vets.id
            WHERE vets.id = $1"
     values=[@id]
     results = SqlRunner.run(sql, values)
     return nil if results.first == nil
-    return results.map {|pet| Pet.new(pet)}
+    return results.map {|animal| Animal.new(animal)}
   end
 
 end

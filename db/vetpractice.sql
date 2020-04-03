@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS pets;
+DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS vets;
 
 CREATE TABLE vets (
@@ -7,7 +7,7 @@ CREATE TABLE vets (
   last_name VARCHAR(255)
 );
 
-CREATE TABLE pets (
+CREATE TABLE animals (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   type VARCHAR(255),

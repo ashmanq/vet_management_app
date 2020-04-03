@@ -1,6 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative('../models/pet')
+require_relative('../models/animal')
 require_relative('../models/vet')
 also_reload('../models/*')
 
@@ -18,6 +18,6 @@ end
 get '/vets/:id' do
   id = params['id']
   @vet = Vet.find(id)
-  @pets = @vet.pets()
+  @animals = @vet.animals()
   erb(:"vets/show")
 end

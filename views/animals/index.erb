@@ -1,0 +1,22 @@
+<h1>Animals</h1>
+
+<div class="list">
+  <a class="item_select cell" href="/animals/new">
+      <h3>Add New Pet</h3>
+      <img src="" alt="">
+  </a>
+</div>
+
+<h2>Select animal for details</h2>
+
+<div class="list">
+
+  <% for animal in @animals %>
+    <a class="item_select cell" href="/animals/<%= animal.id %>">
+        <h2> <%= animal.name %> </h2>
+        <h2> <%= animal.type %> </h2>
+        <img src="" alt="">
+    </a>
+  <% end %>
+
+<div>

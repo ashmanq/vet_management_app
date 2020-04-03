@@ -1,8 +1,7 @@
 require_relative('../db/sql_runner')
 
 
-class Pet
-
+class Animal
   attr_reader :id
   attr_accessor :name, :type, :dob, :owner_name,
                 :owner_tel_no, :owner_address,
@@ -21,7 +20,7 @@ class Pet
   end
 
   def save()
-    sql = "INSERT INTO pets
+    sql = "INSERT INTO animals
            (
              name,
              type,
@@ -43,7 +42,7 @@ class Pet
   end
 
   def update()
-    sql = "UPDATE pets SET
+    sql = "UPDATE animals SET
            (
              name,
              type,
@@ -65,35 +64,35 @@ class Pet
   end
 
   def delete()
-    sql = "DELETE FROM pets WHERE id = $1"
+    sql = "DELETE FROM animals WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
-    sql = "DELETE FROM pets"
+    sql = "DELETE FROM animals"
     SqlRunner.run(sql)
   end
 
   def self.find(id)
-    sql = "SELECT * FROM pets WHERE id = $1"
+    sql = "SELECT * FROM animals WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
     return nil if result == nil
-    return Pet.new(result)
+    return Animal.new(result)
   end
 
   def self.find_all()
-    sql = "SELECT * FROM pets"
+    sql = "SELECT * FROM animals"
     result = SqlRunner.run(sql)
     return nil if result.first == nil
-    return result.map {|pet| Pet.new(pet)}
+    return result.map {|animal| Animal.new(animal)}
   end
 
   def vet()
     sql = "SELECT vets.* FROM vets
-           INNER JOIN pets
-           ON vets.id = pets.vet_id
+           INNER JOIN animals
+           ON vets.id = animals.vet_id
            WHERE vets.id = $1"
     values = [@vet_id]
     result = SqlRunner.run(sql, values)
