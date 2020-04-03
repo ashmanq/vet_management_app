@@ -18,23 +18,30 @@ class Animal
   end
 
   def save()
-    sql = "INSERT INTO animals
-           (
-             name,
-             type,
-             dob,
-             treatment_notes,
-             owner_id,
-             vet_id
-           )
-           VALUES
-           (
-             $1, $2, $3, $4, $5, $6
-           )
-           RETURNING id"
-    values = [@name, @type, @dob, @treatment_notes,
-              @owner_id, @vet_id]
-    @id = SqlRunner.run(sql, values).first['id']
+    # Code for checking if owner is registered with practice or not.
+    # If not registered then the new pet won't be saved.
+    owner = Owner.find(@owner_id)
+    if owner.registered == true
+      sql = "INSERT INTO animals
+             (
+               name,
+               type,
+               dob,
+               treatment_notes,
+               owner_id,
+               vet_id
+             )
+             VALUES
+             (
+               $1, $2, $3, $4, $5, $6
+             )
+             RETURNING id"
+      values = [@name, @type, @dob, @treatment_notes,
+                @owner_id, @vet_id]
+      @id = SqlRunner.run(sql, values).first['id']
+    else
+      return nil
+    end
   end
 
   def update()

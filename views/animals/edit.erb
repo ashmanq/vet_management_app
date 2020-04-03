@@ -25,7 +25,7 @@
 
     <label for="owner_id">Owner:</label>
     <input type="text" name="owner_name" value="<%= @animal.owner().full_name() %>" disabled>
-
+    <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
     <input type="text" name="owner_id" value="<%= @animal.owner_id %>" hidden>
 
   </fieldset>

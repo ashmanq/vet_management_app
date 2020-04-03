@@ -33,9 +33,10 @@
         <% end %>
       </select>
     <% else %>
-      <select class="" name="owner_id">
-        <option value="<%= @owners.id %>"><%= @owners.full_name %></option>
-      </select>
+
+    <input type="text" name="owner_name" value="<%= @owners.full_name() %>" disabled>
+    <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
+    <input type="text" name="owner_id" value="<%= @owners.id %>" hidden>
     <% end %>
 
     <label for="treatment-notes">Treatment Notes</label>

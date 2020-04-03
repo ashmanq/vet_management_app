@@ -38,9 +38,11 @@
 
     <p></p>
 
-    <a class="item_select cell" href="/animals/new/<%= @owner.id %>">
-        <label for="">Add Animal</label>
-    </a>
+    <% if @owner.registered == 't' %>
+      <a class="item_select cell" href="/animals/new/<%= @owner.id %>" >
+          <label for="">Add Animal</label>
+      </a>
+    <% end %>
 
   </fieldset>
 </section>

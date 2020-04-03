@@ -14,6 +14,12 @@
     <label for="tel_no">Tel No</label>
     <input type="text" name="tel_no" placeholder="Tel No" value="<%= @owner.tel_no %>">
 
+    <label for="registered">Registered</label>
+    <select class="" name="registered">
+      <option value="0" <% if @owner.registered == 'f' %> <%= p "selected "%> <% end %>>No</option>
+      <option value="1" <% if @owner.registered == 't' %> <%= p "selected "%> <% end %>>Yes</option>
+    </select>
+
   </fieldset>
   <input class="btn" type='submit' value="Update">
 </form>

@@ -16,7 +16,8 @@ end
 # GET NEW
 get '/animals/new' do
   @vets = Vet.find_all()
-  @owners = Owner.find_all()
+  # We only list all registered owners
+  @owners = Owner.find_registered()
   erb(:"animals/new")
 end
 
@@ -41,7 +42,6 @@ get '/animals/:id/edit' do
   id = params['id'].to_i
   @animal = Animal.find(id)
   @vets = Vet.find_all()
-  @owners = Owner.find_all()
   erb(:"animals/edit")
 end
 

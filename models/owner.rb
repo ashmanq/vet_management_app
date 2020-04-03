@@ -70,8 +70,19 @@ class Owner
     return Owner.new(result)
   end
 
+
   def self.find_all()
-    sql = "SELECT * FROM owners ORDER BY first_name, last_name"
+    sql = "SELECT * FROM owners
+            ORDER BY first_name, last_name"
+    result = SqlRunner.run(sql)
+    return nil if result.first == nil
+    return result.map {|owner| Owner.new(owner)}
+  end
+
+  def self.find_registered()
+    sql = "SELECT * FROM owners
+            WHERE registered = true
+            ORDER BY first_name, last_name"
     result = SqlRunner.run(sql)
     return nil if result.first == nil
     return result.map {|owner| Owner.new(owner)}
