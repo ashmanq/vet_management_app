@@ -15,14 +15,18 @@
 
     <label for="vet_id">Select a Vet:</label>
     <select name="vet_id">
-      <% for vet in @vets %>
-      <option value="<%= vet.id %>"><%= vet.full_name %></option>
+      <% if @vets != nil %>
+        <% for vet in @vets %>
+        <option value="<%= vet.id %>"><%= vet.full_name %></option>
+        <% end %>
       <% end %>
     </select>
 
     <select name="owner_id">
-      <% for owner in @owners %>
-      <option value="<%= owner.id %>"><%= owner.full_name %></option>
+      <% if @owners != nil %>
+        <% for owner in @owners %>
+          <option value="<%= owner.id %>"><%= owner.full_name %></option>
+        <% end %>
       <% end %>
     </select>
 

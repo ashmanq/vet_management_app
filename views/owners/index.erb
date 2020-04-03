@@ -10,12 +10,15 @@
 <h2>Select for details</h2>
 
 <div class="list">
-
-  <% for owner in @owners %>
-    <a class="item_select cell" href="/owners/<%= owner.id %>">
-        <h2> <%= owner.full_name %> </h2>
-        <img src="" alt="">
-    </a>
+  <% if @owners != nil %>
+    <% for owner in @owners %>
+      <a class="item_select cell" href="/owners/<%= owner.id %>">
+          <h2> <%= owner.full_name %> </h2>
+          <img src="" alt="">
+      </a>
+    <% end %>
+  <% else %>
+    <h3 class="warning_msg">No owners in system</h3>
   <% end %>
 
 <div>

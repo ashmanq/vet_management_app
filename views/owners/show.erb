@@ -1,17 +1,36 @@
-<h1><%= @owner.full_name %></h1>
 
 <section class="list">
-  <!-- <div class="list"> -->
+  <fieldset>
+    <legend>Owner Details</legend>
+    <h1><%= @owner.full_name %></h1>
+    <table class="cell">
+      <!-- <tr>
+        <th>Name</th>
+        <td><%= @owner.full_name %></td>
+      </tr> -->
+      <tr>
+        <th>Address</th>
+        <td><%= @owner.address %></td>
+      </tr>
+      <tr>
+        <th>Tel No</th>
+        <td><%= @owner.tel_no %></td>
+      </tr>
+    </table>
+
     <a class="item_select cell" href="/owners/<%= @owner.id %>/edit">
         <label for="">Edit</label>
     </a>
     <a class="item_select cell" href="/owners/remove/<%= @owner.id %>">
         <label for="">Remove</label>
     </a>
-  <!-- </div> -->
+
+  </fieldset>
 </section>
 
+
 <h2>Owner of:</h2>
+
 <section class="list">
   <% if @animals != nil %>
     <% for animal in @animals %>

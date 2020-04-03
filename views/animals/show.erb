@@ -2,35 +2,43 @@
 
 <div class="display_list">
 
-  <img src="" alt="">
-  <table class="cell">
-    <tr>
-      <th>Type</th>
-      <td><%= @animal.type %></td>
-    </tr>
-    <tr>
-      <th>DOB</th>
-      <td><%= @animal.dob %></td>
-    </tr>
-    <tr>
-      <th>Vet</th>
-      <td><%= @animal.vet().full_name %></td>
-    </tr>
-    <tr>
-      <th>Owner Name</th>
-      <td><%= @animal.owner().full_name() %></td>
-    </tr>
-    <tr>
-      <th>Treatment Notes</th>
-      <td><%= @animal.treatment_notes%></td>
-    </tr>
-  </table>
+  <fieldset>
+    <legend>Animal Details</legend>
+
+    <table class="cell">
+      <tr>
+        <th>Type</th>
+        <td><%= @animal.type %></td>
+      </tr>
+      <tr>
+        <th>DOB</th>
+        <td><%= @animal.dob %></td>
+      </tr>
+      <tr>
+        <th>Vet</th>
+        <td><%= @animal.vet().full_name %></td>
+      </tr>
+      <tr>
+        <th>Owner Name</th>
+        <td><%= @animal.owner().full_name() %></td>
+      </tr>
+      <tr>
+        <th>Treatment Notes</th>
+        <td><%= @animal.treatment_notes%></td>
+      </tr>
+    </table>
+
+  </fieldset>
 
   <a class="item_select cell" href="/animals/<%= @animal.id %>/edit">
       <label for="">Edit</label>
   </a>
   <a class="item_select cell" href="/animals/remove/<%= @animal.id %>">
       <label for="">Remove</label>
+  </a>
+  <p></p>
+  <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
+      <label for="">Owner Details</label>
   </a>
 
 </div>

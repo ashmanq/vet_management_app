@@ -10,13 +10,16 @@
 <h2>Select for details</h2>
 
 <div class="list">
-
-  <% for animal in @animals %>
-    <a class="item_select cell" href="/animals/<%= animal.id %>">
-        <h2> <%= animal.name %> </h2>
-        <h2> <%= animal.type %> </h2>
-        <img src="" alt="">
-    </a>
+  <% if @animals != nil %>
+    <% for animal in @animals %>
+      <a class="item_select cell" href="/animals/<%= animal.id %>">
+          <h2> <%= animal.name %> </h2>
+          <h2> <%= animal.type %> </h2>
+          <img src="" alt="">
+      </a>
+    <% end %>
+    <% else %>
+      <h3 class="warning_msg">No animals in system</h3>
   <% end %>
 
 <div>
