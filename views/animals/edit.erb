@@ -1,0 +1,40 @@
+
+<form class="" action="/animals/<%= @animal.id %>" method="POST">
+  <fieldset>
+    <h3>Edit Details</h3>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" value="<%= @animal.name %>">
+
+
+    <label for="type">Type</label>
+    <input type="text" name="type" placeholder="Type" value="<%= @animal.type %>">
+
+
+    <label for="dob">DoB</label>
+    <input type="date" name="dob" placeholder="DD/MM/YY" value="<%= @animal.dob %>">
+
+    <label for="vet_id">Select a Vet:</label>
+    <select name="vet_id">
+      <% for vet in @vets %>
+      <option value="<%= vet.id %>"
+        " "<% if vet.id == @animal.vet_id%>
+        <%= p "selected" %>
+        <% end %>
+        ><%= vet.full_name %></option>
+      <% end %>
+    </select>
+
+    <label for="owner_name">Owner's Name</label>
+    <input type="text" name="owner_name" placeholder="Owner's Name" value="<%= @animal.owner_name %>">
+
+    <label for="owner_tel_no">Owners Tel No</label>
+    <input type="text" name="owner_tel_no" placeholder="Owners Tel No" value="<%= @animal.owner_tel_no %>">
+
+    <label for="owner_address">Owners Address</label>
+    <input type="text" name="owner_address" placeholder="Owner's Address" value="<%= @animal.owner_address %>">
+
+    <label for="treatment-notes">Treatment Notes</label>
+    <input type="text" name="treatment_notes" placeholder="Treatment Notes" value="<%= @animal.treatment_notes %>">
+  </fieldset>
+  <input class="btn" type='submit' value="Update">
+</form>

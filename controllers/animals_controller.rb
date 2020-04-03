@@ -17,6 +17,20 @@ get '/animals/new' do
   erb(:"animals/new")
 end
 
+get '/animals/remove/:id' do
+  id = params['id'].to_i
+  animal = Animal.find(id)
+  animal.delete
+  redirect '/animals'
+end
+
+get '/animals/:id/edit' do
+  id = params['id'].to_i
+  @animal = Animal.find(id)
+  @vets = Vet.find_all()
+  erb(:"animals/edit")
+end
+
 get '/animals/:id' do
   id = params['id']
   @animal = Animal.find(id)
@@ -26,5 +40,11 @@ end
 post '/animals' do
   animal = Animal.new(params)
   animal.save()
-  redirect '/pets'
+  redirect '/animals'
+end
+
+post '/animals/:id' do
+  animal = Animal.new(params)
+  animal.update()
+  redirect '/animals'
 end

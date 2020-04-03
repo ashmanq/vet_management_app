@@ -58,7 +58,7 @@ class Animal
               $1, $2, $3, $4, $5, $6, $7, $8
             )
             WHERE id = $9"
-      values[@name, @type, @dob, @owner_name, @owner_tel_no,
+      values = [@name, @type, @dob, @owner_name, @owner_tel_no,
              @owner_address, @treatment_notes, @vet_id, @id]
       SqlRunner.run(sql, values)
   end
@@ -83,7 +83,7 @@ class Animal
   end
 
   def self.find_all()
-    sql = "SELECT * FROM animals"
+    sql = "SELECT * FROM animals ORDER BY name"
     result = SqlRunner.run(sql)
     return nil if result.first == nil
     return result.map {|animal| Animal.new(animal)}

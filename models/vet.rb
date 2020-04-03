@@ -41,7 +41,7 @@ class Vet
               $1, $2
             )
             WHERE id = $3"
-      values[@first_name, @last_name, @id]
+      values = [@first_name, @last_name, @id]
       SqlRunner.run(sql, values)
   end
 
@@ -65,7 +65,7 @@ class Vet
   end
 
   def self.find_all()
-    sql = "SELECT * FROM vets"
+    sql = "SELECT * FROM vets ORDER BY last_name, first_name"
     result = SqlRunner.run(sql)
     return nil if result.first == nil
     return result.map {|vet| Vet.new(vet)}

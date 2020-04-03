@@ -17,17 +17,11 @@
   <h2>Responsible for:</h2>
   <div class="list">
     <% for animal in @animals %>
-        <div class="cell">
-          <table>
-            <tr>
-              <th>Name</th>
-            </tr>
-            <tr>
-              <td><%= animal.name() %></td>
-            </tr>
-          </table>
-        </div>
+    <a class="item_select cell" href="/animals/<%= animal.id %>">
+        <h2> <%= animal.name %> </h2>
+        <p> <%= animal.type %> </p>
+        <img src="" alt="">
+    </a>
       <% end %>
-
   </div>
 </section>
