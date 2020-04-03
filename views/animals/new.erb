@@ -33,7 +33,6 @@
         <% end %>
       </select>
     <% else %>
-
     <input type="text" name="owner_name" value="<%= @owners.full_name() %>" disabled>
     <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
     <input type="text" name="owner_id" value="<%= @owners.id %>" hidden>
@@ -41,6 +40,13 @@
 
     <label for="treatment-notes">Treatment Notes</label>
     <input type="text" name="treatment_notes" placeholder="Treatment Notes">
+  </fieldset>
+  <fieldset>
+    <label for="check_in">Check In Date</label>
+    <input type="date" name="check_in" placeholder="DD/MM/YY">
+
+    <label for="check_out">Check Out Date</label>
+    <input type="date" name="check_out" placeholder="DD/MM/YY">
   </fieldset>
   <input class="btn" type='submit' value="Add">
 </form>

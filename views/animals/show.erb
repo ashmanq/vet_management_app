@@ -3,7 +3,7 @@
 <div class="display_list">
 
   <fieldset>
-    <legend>Animal Details</legend>
+    <legend>Animal</legend>
       <table class="cell">
         <tr>
           <th>Type</th>
@@ -11,7 +11,7 @@
         </tr>
         <tr>
           <th>DOB</th>
-          <td><%= @animal.dob %></td>
+          <td><%= @animal.get_dob() %></td>
         </tr>
         <tr>
           <th>Vet</th>
@@ -20,6 +20,14 @@
         <tr>
           <th>Owner Name</th>
           <td><%= @animal.owner().full_name() %></td>
+        </tr>
+        <tr>
+          <th>Check In</th>
+          <td><% if @checking != nil %><%= @checking.get_check_in() %><% end %></td>
+        </tr>
+        <tr>
+          <th>Check Out</th>
+          <td><% if @checking != nil %><%= @checking.get_check_out() %><% end %></td>
         </tr>
         <tr>
           <th>Treatment Notes</th>

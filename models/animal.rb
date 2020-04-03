@@ -1,5 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('../models/owner')
+require_relative('../models/checking')
+require('date')
 
 
 class Animal
@@ -15,6 +17,12 @@ class Animal
     @treatment_notes = options['treatment_notes']
     @owner_id = options['owner_id'].to_i
     @vet_id = options['vet_id'].to_i
+  end
+
+  def get_dob()
+    date_object = Date.strptime(@dob, '%Y-%m-%d')
+    format = date_object.strftime('%d/%m/%Y')
+    return format.to_s
   end
 
   def save()
@@ -108,6 +116,16 @@ class Animal
     values = [@owner_id]
     result = SqlRunner.run(sql, values)
     return result.map {|owner| Owner.new(owner)}.first
+  end
+
+  def checking()
+    sql = "SELECT checkings.* FROM checkings
+           INNER JOIN animals
+           ON checkings.animal_id = animals.id
+           WHERE animals. id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map {|checking| Checking.new(checking)}.first
   end
 
 

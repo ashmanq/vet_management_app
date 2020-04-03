@@ -49,6 +49,7 @@ end
 get '/animals/:id' do
   id = params['id']
   @animal = Animal.find(id)
+  @checking = @animal.checking()
   erb(:"animals/show")
 end
 

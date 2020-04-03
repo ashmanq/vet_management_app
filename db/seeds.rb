@@ -1,11 +1,13 @@
 require_relative( "../models/animal.rb" )
 require_relative( "../models/vet.rb" )
 require_relative( "../models/owner.rb" )
+require_relative( "../models/checking.rb" )
 require("pry-byebug")
 
 Vet.delete_all()
 Animal.delete_all()
 Owner.delete_all()
+Checking.delete_all()
 
 vet1 = Vet.new('first_name' => "James", 'last_name' => "Sullivan")
 vet1.save()
@@ -31,25 +33,33 @@ owner3 = Owner.new('first_name' => 'Greta', 'last_name' => 'Thurnberg',
                     'registered' => true)
 owner3.save()
 
-animal1 = Animal.new('name' => "Raja", 'type' => "cat", 'dob' => "01/01/18",
+animal1 = Animal.new('name' => "Raja", 'type' => "cat", 'dob' => "01-01-18",
                'owner_id' => owner1.id, 'treatment_notes' => "Suffering from cat flu",
                'vet_id' => vet1.id)
 animal1.save()
 
-animal2 = Animal.new('name' => "Rocko", 'type' => "doggo", 'dob' => "03/06/16",
+animal2 = Animal.new('name' => "Rocko", 'type' => "doggo", 'dob' => "03-06-16",
                'owner_id' => owner2.id, 'treatment_notes' => "Broken Leg",
                'vet_id' => vet2.id)
 animal2.save()
 
-animal2 = Animal.new('name' => "Buster", 'type' => "Rabbit", 'dob' => "03/06/00",
+animal2 = Animal.new('name' => "Buster", 'type' => "Rabbit", 'dob' => "03-06-00",
                'owner_id' => owner2.id, 'treatment_notes' => "Drinking problem",
                'vet_id' => vet3.id)
 animal2.save()
 
-animal2 = Animal.new('name' => "Big bird", 'type' => "Bird", 'dob' => "03/07/00",
+animal2 = Animal.new('name' => "Big bird", 'type' => "Bird", 'dob' => "03-07-00",
                'owner_id' => owner2.id, 'treatment_notes' => "Drinking problem",
                'vet_id' => vet3.id)
 animal2.save()
+
+checking1 = Checking.new('check_in' => '01/04/20', 'check_out' => '02-04-20',
+                         'animal_id' => animal1.id)
+checking1.save()
+
+checking2 = Checking.new('check_in' => '02/04/20', 'check_out' => '06-04-20',
+                         'animal_id' => animal2.id)
+checking2.save()
 
 binding.pry
 nil
