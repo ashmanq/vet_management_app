@@ -23,6 +23,8 @@ CREATE TABLE animals (
   type VARCHAR(255),
   dob DATE,
   treatment_notes TEXT,
+  check_in_date DATE,
+  check_out_date DATE,
   owner_id INT REFERENCES owners(id) ON DELETE CASCADE,
   vet_id INT REFERENCES vets(id) ON DELETE CASCADE
 );

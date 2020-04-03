@@ -2,3 +2,7 @@ button {
   margin: 5px:
 
 }
+
+.btn_warning {
+  background-color: #e34f4f;
+}

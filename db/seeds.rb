@@ -18,17 +18,17 @@ vet3.save()
 
 owner1 = Owner.new('first_name' => 'James', 'last_name' => 'Khan',
                     'address' => '123 Rd, G1 3ED', 'tel_no' => '0141 123456',
-                    'registered' => FALSE)
+                    'registered' => true)
 owner1.save()
 
 owner2 = Owner.new('first_name' => 'Theresa', 'last_name' => 'May',
                     'address' => '1 Posh Place, L1 1AA', 'tel_no' => '0141 000000',
-                    'registered' => TRUE)
+                    'registered' => true)
 owner2.save()
 
 owner3 = Owner.new('first_name' => 'Greta', 'last_name' => 'Thurnberg',
                     'address' => '1 A road, GG1 1AA', 'tel_no' => '01 66 000000',
-                    'registered' => FALSE)
+                    'registered' => true)
 owner3.save()
 
 animal1 = Animal.new('name' => "Raja", 'type' => "cat", 'dob' => "01/01/18",

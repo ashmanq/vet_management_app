@@ -21,7 +21,7 @@ class Animal
     # Code for checking if owner is registered with practice or not.
     # If not registered then the new pet won't be saved.
     owner = Owner.find(@owner_id)
-    if owner.registered == true
+    if owner.registered == 't'
       sql = "INSERT INTO animals
              (
                name,
