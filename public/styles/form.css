@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 1.5em;
+  width:30%;
+  align-self: center;
+
+}
+
+form.input {
+  width: 100%
+}
+
+form input.textbox {
+  font-size: 1.5em;
+};

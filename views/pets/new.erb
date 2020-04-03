@@ -1,0 +1,76 @@
+
+<form class="" action="/pets" method="POST">
+  <fieldset>
+    <h3>Add New Pet</h3>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name">
+
+
+    <label for="type">Type</label>
+    <input type="text" name="type" placeholder="Type">
+
+
+    <label for="dob">DoB</label>
+    <input type="text" name="dob" placeholder="DD/MM/YY">
+
+    <label for="vet_id">Select a Vet:</label>
+    <select name="vet_id">
+      <% for vet in @vets %>
+      <option value="<%= vet.id %>"><%= vet.full_name %></option>
+      <% end %>
+    </select>
+
+    <label for="owner_name">Owner's Name</label>
+    <input type="text" name="owner_name" placeholder="Owner's Name">
+
+    <label for="owner_tel_no">Owners Tel No</label>
+    <input type="text" name="owner_tel_no" placeholder="Owners Tel No">
+
+    <label for="owner_address">Owners Address</label>
+    <input type="text" name="owner_address" placeholder="Owner's Address">
+
+    <label for="treatment-notes">Treatment Notes</label>
+    <input type="text" name="treatment_notes" placeholder="Treatment Notes">
+  </fieldset>
+  <input class="btn" type='submit' value="Add">
+</form>
+
+<!-- <form class="list" action="/pets" method="POST">
+  <div class= "cell">
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name">
+  </div>
+  <div class= "cell">
+    <label for="type">Type</label>
+    <input type="text" name="type" placeholder="Type">
+  </div>
+  <div class= "cell">
+    <label for="dob">DoB</label>
+    <input type="text" name="dob" placeholder="DD/MM/YY">
+  </div>
+  <div class= "cell">
+    <label for="">Select a Vet:</label>
+    <select name="vet_id">
+      <% for vet in @vets %>
+      <option value="<%= vet.id %>"><%= vet.full_name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class= "cell">
+    <label for="owner_name">Owner's Name</label>
+    <input type="text" name="owner_name" placeholder="Owner's Name">
+  </div>
+  <div class= "cell">
+    <label for="owner_tel_no">Owners Tel No</label>
+    <input type="text" name="owner_tel_no" placeholder="Owners Tel No">
+  </div>
+  <div class= "cell">
+    <label for="owner_address">Owners Address</label>
+    <input type="text" name="owner_address" placeholder="Owner's Address">
+  </div>
+  <div class= "cell">
+    <label for="treatment-notes">Treatment Notes</label>
+    <input type="text" name="treatment_notes" placeholder="Treatment Notes">
+  </div>
+</form>
+ -->

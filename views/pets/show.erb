@@ -1,0 +1,38 @@
+<h1><%= @pet.name %></h1>
+
+<div class="list">
+
+    <div  class="cell">
+      <img src="" alt="">
+      <table>
+        <tr>
+          <th>Type</th>
+          <td><%= @pet.type %></td>
+        </tr>
+        <tr>
+          <th>DOB</th>
+          <td><%= @pet.dob %></td>
+        </tr>
+        <tr>
+          <th>Vet</th>
+          <td><%= @pet.vet().full_name %></td>
+        </tr>
+        <tr>
+          <th>Owner Name</th>
+          <td><%= @pet.owner_name %></td>
+        </tr>
+        <tr>
+          <th>Owner Tel No</th>
+          <td><%= @pet.owner_tel_no %></td>
+        </tr>
+        <tr>
+          <th>Owner Address</th>
+          <td><%= @pet.owner_address %></td>
+        </tr>
+        <tr>
+          <th>Treatment Notes</th>
+          <td><%= @pet.treatment_notes%></td>
+        </tr>
+      </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<h1>Pets</h1>
+
+<div class="list">
+  <a class="item_select" href="/pets/new">
+    <div  class="cell">
+      <h3>Add New Pet</h3>
+      <img src="" alt="">
+    </div>
+  </a>
+</div>
+
+<h2>Select pet for details</h2>
+
+<div class="list">
+
+  <% for pet in @pets %>
+    <a class="item_select" href="/pets/<%= pet.id %>">
+      <div  class="cell">
+        <h2> <%= pet.name %> </h2>
+        <h2> <%= pet.type %> </h2>
+        <img src="" alt="">
+      </div>
+    </a>
+  <% end %>
+
+<div>

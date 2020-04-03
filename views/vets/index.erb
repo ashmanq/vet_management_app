@@ -1,0 +1,16 @@
+<h1>Veterinary Doctors</h1>
+
+<h2>Select for details</h2>
+
+<div class="list">
+
+  <% for vet in @vets %>
+    <a class="item_select" href="/vets/<%= vet.id %>">
+      <div  class="cell">
+        <h2> <%= vet.full_name %> </h2>
+        <img src="" alt="">
+      </div>
+    </a>
+  <% end %>
+
+<div>
