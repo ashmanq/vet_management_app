@@ -3,19 +3,16 @@ require_relative('../db/sql_runner')
 
 class Animal
   attr_reader :id
-  attr_accessor :name, :type, :dob, :owner_name,
-                :owner_tel_no, :owner_address,
-                :treatment_notes, :vet_id
+  attr_accessor :name, :type, :dob, :treatment_notes,
+                :owner_id, :vet_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @type = options['type']
     @dob = options['dob']
-    @owner_name = options['owner_name']
-    @owner_tel_no = options['owner_tel_no']
-    @owner_address = options['owner_address']
     @treatment_notes = options['treatment_notes']
+    @owner_id = options['owner_id'].to_i
     @vet_id = options['vet_id'].to_i
   end
 
@@ -25,19 +22,17 @@ class Animal
              name,
              type,
              dob,
-             owner_name,
-             owner_tel_no,
-             owner_address,
              treatment_notes,
+             owner_id,
              vet_id
            )
            VALUES
            (
-             $1, $2, $3, $4, $5, $6, $7, $8
+             $1, $2, $3, $4, $5, $6
            )
            RETURNING id"
-    values = [@name, @type, @dob, @owner_name, @owner_tel_no,
-              @owner_address, @treatment_notes, @vet_id]
+    values = [@name, @type, @dob, @treatment_notes,
+              @owner_id, @vet_id]
     @id = SqlRunner.run(sql, values).first['id']
   end
 
@@ -47,19 +42,17 @@ class Animal
              name,
              type,
              dob,
-             owner_name,
-             owner_tel_no,
-             owner_address,
              treatment_notes,
+             owner_id,
              vet_id
             )
             =
             (
-              $1, $2, $3, $4, $5, $6, $7, $8
+              $1, $2, $3, $4, $5, $6
             )
-            WHERE id = $9"
-      values = [@name, @type, @dob, @owner_name, @owner_tel_no,
-             @owner_address, @treatment_notes, @vet_id, @id]
+            WHERE id = $7"
+      values = [@name, @type, @dob, @treatment_notes,
+                @owner_id, @vet_id, @id]
       SqlRunner.run(sql, values)
   end
 
