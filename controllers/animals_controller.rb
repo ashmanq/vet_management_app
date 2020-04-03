@@ -20,6 +20,14 @@ get '/animals/new' do
   erb(:"animals/new")
 end
 
+# ADD NEW AMIMAL TO SPECIFIC OWNER
+get '/animals/new/:customer_id' do
+  customer_id = params['customer_id']
+  @vets = Vet.find_all()
+  @owners = Owner.find(customer_id)
+  erb(:"animals/new")
+end
+
 # DELETE
 get '/animals/remove/:id' do
   id = params['id'].to_i

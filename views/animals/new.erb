@@ -13,7 +13,7 @@
     <label for="dob">DoB</label>
     <input type="date" name="dob" placeholder="DD/MM/YY">
 
-    <label for="vet_id">Select a Vet:</label>
+    <label for="vet_id">Vet</label>
     <select name="vet_id">
       <% if @vets != nil %>
         <% for vet in @vets %>
@@ -22,13 +22,21 @@
       <% end %>
     </select>
 
-    <select name="owner_id">
-      <% if @owners != nil %>
-        <% for owner in @owners %>
-          <option value="<%= owner.id %>"><%= owner.full_name %></option>
+    <label for="owner_id">Owner</label>
+    <% if @owners.kind_of?(Array)%>
+      <select name="owner_id">
+        <% if @owners != nil %>
+            <% for owner in @owners %>
+               <option value="<%= owner.id %>">
+                <%= owner.full_name %></option>
+            <% end %>
         <% end %>
-      <% end %>
-    </select>
+      </select>
+    <% else %>
+      <select class="" name="owner_id">
+        <option value="<%= @owners.id %>"><%= @owners.full_name %></option>
+      </select>
+    <% end %>
 
     <label for="treatment-notes">Treatment Notes</label>
     <input type="text" name="treatment_notes" placeholder="Treatment Notes">

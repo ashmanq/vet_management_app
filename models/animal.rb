@@ -96,7 +96,7 @@ class Animal
   def owner()
     sql = "SELECT owners.* FROM owners
            INNER JOIN animals
-           ON owners.id = animals.vet_id
+           ON owners.id = animals.owner_id
            WHERE owners.id = $1"
     values = [@owner_id]
     result = SqlRunner.run(sql, values)

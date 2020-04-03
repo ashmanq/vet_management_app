@@ -4,7 +4,7 @@ require_relative("../models/animal")
 class Owner
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :address, :tel_no
+  attr_accessor :first_name, :last_name, :address, :tel_no, :registered
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -12,6 +12,7 @@ class Owner
     @last_name = options['last_name']
     @address = options['address']
     @tel_no = options['tel_no']
+    @registered = options['registered']
   end
 
   def save()
@@ -20,14 +21,15 @@ class Owner
              first_name,
              last_name,
              address,
-             tel_no
+             tel_no,
+             registered
            )
            VALUES
            (
-             $1, $2, $3, $4
+             $1, $2, $3, $4, $5
            )
            RETURNING id"
-    values = [@first_name, @last_name, @address, @tel_no]
+    values = [@first_name, @last_name, @address, @tel_no, @registered]
     @id = SqlRunner.run(sql, values).first['id']
   end
 
@@ -37,14 +39,15 @@ class Owner
              first_name,
              last_name,
              address,
-             tel_no
+             tel_no,
+             registered
             )
             =
             (
-              $1, $2, $3, $4
+              $1, $2, $3, $4, $5
             )
-            WHERE id = $5"
-      values = [@first_name, @last_name, @address, @tel_no, @id]
+            WHERE id = $6"
+      values = [@first_name, @last_name, @address, @tel_no, @registered, @id]
       SqlRunner.run(sql, values)
   end
 
@@ -85,6 +88,7 @@ class Owner
            WHERE owners.id = $1"
     values = [@id]
     result = SqlRunner.run(sql, values)
+    return nil if result.first == nil
     return result.map {|animal| Animal.new(animal)}
   end
 

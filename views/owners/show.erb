@@ -16,13 +16,30 @@
         <th>Tel No</th>
         <td><%= @owner.tel_no %></td>
       </tr>
+      <tr>
+        <th>Registered</th>
+        <% if @owner.registered == 't' %>
+          <td>
+          <%= p "Yes" %>
+        <% else %>
+          <td class="<%= p "warning_msg"%>">
+          <%= p "No" %>
+        <% end %>
+        </td>
+      </tr>
     </table>
 
     <a class="item_select cell" href="/owners/<%= @owner.id %>/edit">
-        <label for="">Edit</label>
+        <label for="">Edit Owner Details</label>
     </a>
     <a class="item_select cell" href="/owners/remove/<%= @owner.id %>">
-        <label for="">Remove</label>
+        <label for="">Delete Owner</label>
+    </a>
+
+    <p></p>
+
+    <a class="item_select cell" href="/animals/new/<%= @owner.id %>">
+        <label for="">Add Animal</label>
     </a>
 
   </fieldset>
@@ -41,6 +58,6 @@
       </a>
     <% end %>
   <% else %>
-  <h2 class="warning_msg" >Doesn't have any pets in system.</h2>
+  <h2 class="warning_msg">Doesn't have any pets in system.</h2>
   <% end %>
 </section>

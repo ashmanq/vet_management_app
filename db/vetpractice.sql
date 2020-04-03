@@ -13,7 +13,8 @@ CREATE TABLE owners (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   address VARCHAR(255),
-  tel_no VARCHAR(255)
+  tel_no VARCHAR(255),
+  registered BOOLEAN
 );
 
 CREATE TABLE animals (
