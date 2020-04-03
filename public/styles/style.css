@@ -91,6 +91,10 @@ input[type=submit]:hover, .delete_button:hover{
   border-radius: 5px;
 }
 
+.warning_msg {
+  color: #912a2a;
+}
+
 nav{
   align-self: center;
   font-size: 1.5em;

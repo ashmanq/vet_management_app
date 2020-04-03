@@ -16,7 +16,7 @@ class Animal
     @owner_tel_no = options['owner_tel_no']
     @owner_address = options['owner_address']
     @treatment_notes = options['treatment_notes']
-    @vet_id = options['vet_id']
+    @vet_id = options['vet_id'].to_i
   end
 
   def save()

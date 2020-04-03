@@ -1,27 +1,27 @@
+<h1><%= @vet.full_name %></h1>
 
-<section>
-  <h1><%= @vet.full_name %></h1>
-
-  <!-- <div class="list">
-        <div class="cell">
-          <table>
-            <tr>
-              <th>Name</th>
-            </tr>
-            <tr>
-              <%# <td><%= @vet.full_name() %></td> %>
-            </tr>
-          </table>
-        </div>
-  </div> -->
-  <h2>Responsible for:</h2>
-  <div class="list">
-    <% for animal in @animals %>
-    <a class="item_select cell" href="/animals/<%= animal.id %>">
-        <h2> <%= animal.name %> </h2>
-        <p> <%= animal.type %> </p>
-        <img src="" alt="">
+<section class="list">
+  <!-- <div class="list"> -->
+    <a class="item_select cell" href="/vets/<%= @vet.id %>/edit">
+        <label for="">Edit</label>
     </a>
-      <% end %>
-  </div>
+    <a class="item_select cell" href="/vets/remove/<%= @vet.id %>">
+        <label for="">Remove</label>
+    </a>
+  <!-- </div> -->
+</section>
+
+<h2>Responsible for:</h2>
+<section class="list">
+  <% if @animals != nil %>
+    <% for animal in @animals %>
+      <a class="item_select cell" href="/animals/<%= animal.id %>">
+          <h2> <%= animal.name %> </h2>
+          <p> <%= animal.type %> </p>
+          <img src="" alt="">
+      </a>
+    <% end %>
+  <% else %>
+  <h2 class="warning_msg" >Not responsible for any pets.</h2>
+  <% end %>
 </section>

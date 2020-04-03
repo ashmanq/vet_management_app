@@ -14,13 +14,12 @@
     <input type="date" name="dob" placeholder="DD/MM/YY" value="<%= @animal.dob %>">
 
     <label for="vet_id">Select a Vet:</label>
-    <select name="vet_id">
+    <select name="vet_id" id="vet_id">
       <% for vet in @vets %>
       <option value="<%= vet.id %>"
-        " "<% if vet.id == @animal.vet_id%>
+        <% if @animal.vet_id == vet.id %>
         <%= p "selected" %>
-        <% end %>
-        ><%= vet.full_name %></option>
+        <% end %>><%= vet.full_name %></option>
       <% end %>
     </select>
 
