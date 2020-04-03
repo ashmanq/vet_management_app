@@ -1,0 +1,21 @@
+<h1>Owners</h1>
+
+<div class="list">
+  <a class="item_select cell" href="/owners/new">
+      <h3>Add Owner</h3>
+      <img src="" alt="">
+  </a>
+</div>
+
+<h2>Select for details</h2>
+
+<div class="list">
+
+  <% for owner in @owners %>
+    <a class="item_select cell" href="/owners/<%= owner.id %>">
+        <h2> <%= owner.full_name %> </h2>
+        <img src="" alt="">
+    </a>
+  <% end %>
+
+<div>

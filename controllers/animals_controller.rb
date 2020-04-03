@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/animal')
 require_relative('../models/vet')
+require_relative('../models/owner')
 
 also_reload('../models/*')
 
@@ -15,6 +16,7 @@ end
 # GET NEW
 get '/animals/new' do
   @vets = Vet.find_all()
+  @owners = Owner.find_all()
   erb(:"animals/new")
 end
 
@@ -31,6 +33,7 @@ get '/animals/:id/edit' do
   id = params['id'].to_i
   @animal = Animal.find(id)
   @vets = Vet.find_all()
+  @owners = Owner.find_all()
   erb(:"animals/edit")
 end
 

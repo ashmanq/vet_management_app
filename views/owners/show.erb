@@ -1,17 +1,17 @@
-<h1><%= @vet.full_name %></h1>
+<h1><%= @owner.full_name %></h1>
 
 <section class="list">
   <!-- <div class="list"> -->
-    <a class="item_select cell" href="/vets/<%= @vet.id %>/edit">
+    <a class="item_select cell" href="/owners/<%= @owner.id %>/edit">
         <label for="">Edit</label>
     </a>
-    <a class="item_select cell" href="/vets/remove/<%= @vet.id %>">
+    <a class="item_select cell" href="/owners/remove/<%= @owner.id %>">
         <label for="">Remove</label>
     </a>
   <!-- </div> -->
 </section>
 
-<h2>Responsible for:</h2>
+<h2>Owner of:</h2>
 <section class="list">
   <% if @animals != nil %>
     <% for animal in @animals %>
@@ -22,6 +22,6 @@
       </a>
     <% end %>
   <% else %>
-  <h2 class="warning_msg" >Not responsible for any animals.</h2>
+  <h2 class="warning_msg" >Doesn't have any pets in system.</h2>
   <% end %>
 </section>

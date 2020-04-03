@@ -20,7 +20,7 @@ CREATE TABLE animals (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   type VARCHAR(255),
-  dob VARCHAR(255),
+  dob DATE,
   treatment_notes TEXT,
   owner_id INT REFERENCES owners(id) ON DELETE CASCADE,
   vet_id INT REFERENCES vets(id) ON DELETE CASCADE

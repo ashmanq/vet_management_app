@@ -18,15 +18,7 @@
     </tr>
     <tr>
       <th>Owner Name</th>
-      <td><%= @animal.owner_name %></td>
-    </tr>
-    <tr>
-      <th>Owner Tel No</th>
-      <td><%= @animal.owner_tel_no %></td>
-    </tr>
-    <tr>
-      <th>Owner Address</th>
-      <td><%= @animal.owner_address %></td>
+      <td><%= @animal.owner().full_name() %></td>
     </tr>
     <tr>
       <th>Treatment Notes</th>

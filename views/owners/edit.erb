@@ -1,0 +1,13 @@
+<form class="" action="/owners/<%= @owner.id %>" method="POST">
+  <fieldset>
+    <h3>Edit Details</h3>
+
+    <label for="first_name">First Name</label>
+    <input type="text" name="first_name" placeholder="First Name" value="<%= @owner.first_name %>">
+
+    <label for="last_name">Last Name</label>
+    <input type="text" name="last_name" placeholder="Last Name" value="<%= @owner.last_name %>">
+
+  </fieldset>
+  <input class="btn" type='submit' value="Update">
+</form>
