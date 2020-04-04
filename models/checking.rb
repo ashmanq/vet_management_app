@@ -91,9 +91,23 @@ class Checking
     return format_date(@check_out)
   end
 
+  # Checks that check out date is after check in date
   def check_dates()
-    return true if @check_out > @check_in
+    return true if @check_out >= @check_in
     return false
+  end
+
+  def self.animals_checked_in()
+    todays_date = Date.today
+    sql = "SELECT animals.* FROM animals
+           INNER JOIN checkings
+           ON animals.id = checkings.id
+           WHERE check_out >= $1
+           AND check_in <= $1"
+    values = [todays_date]
+    results = SqlRunner.run(sql, values)
+    return nil if results.first == nil
+    return results.map {|animal| Animal.new(animal)}
   end
 
 end

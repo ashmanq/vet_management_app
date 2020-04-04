@@ -5,6 +5,14 @@ require_relative('../models/animal')
 also_reload('../models/*')
 
 
+# List all animals that are checked into vet practice
+get '/checkings' do
+  @animals = Checking.animals_checked_in()
+  erb(:"checkings/checked_in")
+end
+
+
+
 # GET NEW
 # Get new for specific animal id
 get '/checkings/new/:animal_id' do
