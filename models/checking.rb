@@ -10,7 +10,8 @@ class Checking
   def initialize(options)
     @id = options['id'].to_i
     @check_in = options['check_in']
-    @check_out = options['check_out']
+    #If only check-in details are given then we ignore checkout empty string
+    @check_out = options['check_out'] if options['check_out'] !=""
   end
 
   def save()
@@ -88,12 +89,15 @@ class Checking
   end
 
   def get_check_out()
-    return format_date(@check_out)
+    return format_date(@check_out) if @check_out != nil
+    return nil;
   end
 
-  # Checks that check out date is after check in date
+  # Validation for checking dates
   def check_dates()
-    return true if @check_out >= @check_in
+    # Assume pet in hospital if check in date exists but no checkout date
+    return true if @check_out == nil
+    return true if @check_out > @check_in
     return false
   end
 
@@ -102,8 +106,8 @@ class Checking
     sql = "SELECT animals.* FROM animals
            INNER JOIN checkings
            ON animals.id = checkings.id
-           WHERE check_out >= $1
-           AND check_in <= $1"
+           WHERE check_in <= $1
+           AND (check_out >= $1 OR check_out IS NULL)"
     values = [todays_date]
     results = SqlRunner.run(sql, values)
     return nil if results.first == nil

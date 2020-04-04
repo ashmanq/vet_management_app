@@ -40,9 +40,9 @@ class Treatment
             )
             =
             (
-              $1, $2, $3
+              $1, $2, $3, $4
             )
-            WHERE id = $4"
+            WHERE id = $5"
     values = [@details, @bill, @animal_id, @tr_date, @id]
     SqlRunner.run(sql, values)
   end
@@ -71,5 +71,16 @@ class Treatment
     results = SqlRunner.run(sql)
     return nil if results.first == nil
     return results.map {|treatment| Treatment.new(treatment)}
+  end
+
+  def animal()
+    sql="SELECT animals.* FROM animals
+         INNER JOIN treatments
+         ON animals.id = treatments.animal_id
+         WHERE treatments.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first
+    return nil if result == nil
+    return Animal.new(result)
   end
 end

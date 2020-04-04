@@ -1,0 +1,35 @@
+<p></p>
+
+<h2>Edit Treatment Information</h2>
+<h2><%= @treatment.animal().name%></h2>
+
+<form class="list" action="/treatments/<%= @treatment.id %>" method="POST">
+  <fieldset>
+
+    <!-- id for treatment is required but is hidden from user so they dont edit it -->
+    <input type="text" name="animal_id" value="<%= @treatment.animal_id %>" hidden>
+    <input type="text" name="id" value="<%= @treatment.id %>" hidden>
+
+    <label for="details">Treatment Details</label>
+    <input type="text" name="details" value="<%= @treatment.details %>" required>
+
+    <label for="bill">Cost</label>
+    <input type="number" name="bill" value="<%= @treatment.bill %>" required>
+
+    <label for="tr_date">Date</label>
+    <input type="date" name="tr_date" value="<%= @treatment.tr_date %>" required>
+
+    <input class="btn cell" type='submit' value="Update">
+  </fieldset>
+
+
+</form>
+<p></p>
+<div class="list">
+  <a class="item_select cell" href="/treatments/remove/<%= @treatment.id %>">
+      <label for="">Delete</label>
+  </a>
+  <a class="item_select cell" href="/treatments/animal/<%= @treatment.animal_id %>">
+      <label for="">Cancel</label>
+  </a>
+</div>

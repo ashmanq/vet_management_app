@@ -31,9 +31,15 @@
 
     <% if @owner.registered == 't' %>
       <a class="item_select cell" href="/animals/new/<%= @owner.id %>" >
-          <label for="">Add Animal</label>
+          <label for="">Register New Animal</label>
       </a>
     <% end %>
+
+    <p></p>
+
+    <a class="item_select cell" href="/owners">
+        <label for="">Back to List</label>
+    </a>
 
     <p></p>
 
@@ -42,12 +48,6 @@
     </a>
     <a class="item_select cell btn_warning" href="/owners/remove/<%= @owner.id %>">
         <label for="">Delete Owner</label>
-    </a>
-
-    <p></p>
-
-    <a class="item_select cell" href="/owners">
-        <label for="">Back to List</label>
     </a>
 
 </section>

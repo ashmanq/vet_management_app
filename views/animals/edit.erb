@@ -5,15 +5,15 @@
 <form class="list" action="/animals/<%= @animal.id %>" method="POST">
   <fieldset>
     <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Name" value="<%= @animal.name %>">
+    <input type="text" name="name" placeholder="Name" value="<%= @animal.name %>" requried>
 
 
     <label for="type">Type</label>
-    <input type="text" name="type" placeholder="Type" value="<%= @animal.type %>">
+    <input type="text" name="type" placeholder="Type" value="<%= @animal.type %>" required>
 
 
     <label for="dob">DoB</label>
-    <input type="date" name="dob" placeholder="DD/MM/YYYY" value="<%= @animal.dob %>">
+    <input type="date" name="dob" placeholder="DD/MM/YYYY" value="<%= @animal.dob %>" required>
 
     <label for="vet_id">Select Vet:</label>
     <select name="vet_id" id="vet_id">

@@ -1,0 +1,30 @@
+<p></p>
+<h2>Add Treatment Information</h2>
+<h2><%= @animal.name %></h2>
+
+<form class="list" action="/treatments" method="POST">
+  <fieldset>
+
+    <!-- id for animal is required but is hidden from user so they dont edit it -->
+    <input type="text" name="animal_id" value="<%= @animal.id %>" hidden>
+
+    <label for="details">Treatment Details</label>
+    <input type="text" name="details" required>
+
+    <label for="bill">Cost</label>
+    <input type="number" name="bill" required>
+
+    <label for="tr_date">Date</label>
+    <input type="date" name="tr_date" required>
+
+    <input class="btn cell" type='submit' value="Add">
+  </fieldset>
+
+</form>
+
+<p></p>
+<div class="list">
+  <a class="item_select cell" href="/treatments/animal/<%= @animal.id %>">
+      <label for="">Cancel</label>
+  </a>
+</div>

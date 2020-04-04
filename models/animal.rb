@@ -6,15 +6,13 @@ require('date')
 
 class Animal
   attr_reader :id
-  attr_accessor :name, :type, :dob, :treatment_notes,
-                :owner_id, :vet_id
+  attr_accessor :name, :type, :dob, :owner_id, :vet_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @type = options['type']
     @dob = options['dob']
-    @treatment_notes = options['treatment_notes']
     @owner_id = options['owner_id'].to_i
     @vet_id = options['vet_id'].to_i
   end
@@ -35,17 +33,15 @@ class Animal
                name,
                type,
                dob,
-               treatment_notes,
                owner_id,
                vet_id
              )
              VALUES
              (
-               $1, $2, $3, $4, $5, $6
+               $1, $2, $3, $4, $5
              )
              RETURNING id"
-      values = [@name, @type, @dob, @treatment_notes,
-                @owner_id, @vet_id]
+      values = [@name, @type, @dob, @owner_id, @vet_id]
       @id = SqlRunner.run(sql, values).first['id']
     else
       return nil
@@ -58,17 +54,15 @@ class Animal
              name,
              type,
              dob,
-             treatment_notes,
              owner_id,
              vet_id
             )
             =
             (
-              $1, $2, $3, $4, $5, $6
+              $1, $2, $3, $4, $5
             )
             WHERE id = $7"
-      values = [@name, @type, @dob, @treatment_notes,
-                @owner_id, @vet_id, @id]
+      values = [@name, @type, @dob, @owner_id, @vet_id, @id]
       SqlRunner.run(sql, values)
   end
 
@@ -133,7 +127,8 @@ class Animal
     sql = "SELECT treatments.* FROM treatments
            INNER JOIN animals
            ON animals.id = treatments.animal_id
-           WHERE animals.id = $1"
+           WHERE animals.id = $1
+           ORDER BY treatments.tr_date"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return nil if results.first == nil

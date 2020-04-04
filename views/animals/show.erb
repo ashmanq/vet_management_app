@@ -1,70 +1,66 @@
-<h1>Pet Details</h1>
+<p></p>
+<h1>Animal Details</h1>
 <h2><%= @animal.name %></h2>
 
 <section class="container con-col">
 
 
-      <table class="cell">
-        <tr>
-          <th>Type</th>
-          <td><%= @animal.type %></td>
-        </tr>
-        <tr>
-          <th>DOB</th>
-          <td><%= @animal.get_dob() %></td>
-        </tr>
-        <tr>
-          <th>Vet</th>
-          <td><%= @animal.vet().full_name() %></td>
-        </tr>
-        <tr>
-          <th>Owner Name</th>
-          <td><%= @animal.owner().full_name() %></td>
-        </tr>
-        <tr>
-          <th>Check In</th>
-          <td><% if @checking != nil %><%= @checking.get_check_in() %><% end %></td>
-        </tr>
-        <tr>
-          <th>Check Out</th>
-          <td><% if @checking != nil %><%= @checking.get_check_out() %><% end %></td>
-        </tr>
-        <tr>
-          <th>Treatment Notes</th>
-          <td><%= @animal.treatment_notes%></td>
-        </tr>
-      </table>
-
-      <p></p>
-      <!--  Animal can't be checked in or out if owner isnt registered -->
-      <% if @animal.owner().registered == 't' %>
-        <!-- We check to see if there is an chekings entry for this animal. -->
-        <!-- If there isn't then the link will route you to the new checkings route -->
-        <% if @animal.checking() == nil %>
-          <a class="item_select cell" href="/checkings/new/<%= @animal.id %>">
-        <% else %>
-          <a class="item_select cell" href="/checkings/<%= @animal.id %>/edit">
-        <% end %>
-              <label for="">Check In/Out</label>
-          </a>
-      <% end %>
-      <!-- ----------------------------------------------------------------- -->
-      <a class="item_select cell" href="/animals/<%= @animal.id %>/edit">
-          <label for="">Edit</label>
-      </a>
-      <a class="item_select cell btn_warning" href="/animals/remove/<%= @animal.id %>">
-          <label for="">Remove</label>
-      </a>
-
+  <table class="cell">
+    <tr>
+      <th>Type</th>
+      <td><%= @animal.type %></td>
+    </tr>
+    <tr>
+      <th>DOB</th>
+      <td><%= @animal.get_dob() %></td>
+    </tr>
+    <tr>
+      <th>Vet</th>
+      <td><%= @animal.vet().full_name() %></td>
+    </tr>
+    <tr>
+      <th>Owner Name</th>
+      <td><%= @animal.owner().full_name() %></td>
+    </tr>
+    <tr>
+      <th>Check In</th>
+      <td><% if @checking != nil %><%= @checking.get_check_in() %><% end %></td>
+    </tr>
+    <tr>
+      <th>Check Out</th>
+      <td><% if @checking != nil %><%= @checking.get_check_out() %><% end %></td>
+    </tr>
+  </table>
 
   <p></p>
+  <!--  Animal can't be checked in or out if owner isnt registered -->
+  <% if @animal.owner().registered == 't' %>
+    <!-- We check to see if there is an chekings entry for this animal. -->
+    <!-- If there isn't then the link will route you to the new checkings route -->
+    <% if @animal.checking() == nil %>
+      <a class="item_select cell" href="/checkings/new/<%= @animal.id %>">
+    <% else %>
+      <a class="item_select cell" href="/checkings/<%= @animal.id %>/edit">
+    <% end %>
+          <label for="">Check In/Out</label>
+      </a>
+  <% end %>
 
-    <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
-        <label for="">Owner Details</label>
-    </a>
+  <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
+      <label for="">Owner Details</label>
+  </a>
 
-    <a class="item_select cell" href="/treatments/animal/<%= @animal.id %>">
-        <label for="">Treatment Details</label>
-    </a>
+  <a class="item_select cell" href="/treatments/animal/<%= @animal.id %>">
+      <label for="">Treatments</label>
+  </a>
+
+  <p></p>
+  <!-- ----------------------------------------------------------------- -->
+  <a class="item_select cell" href="/animals/<%= @animal.id %>/edit">
+      <label for="">Edit Animal Details</label>
+  </a>
+  <a class="item_select cell btn_warning" href="/animals/remove/<%= @animal.id %>">
+      <label for="">Remove Animal Details</label>
+  </a>
 
 </section>

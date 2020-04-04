@@ -7,21 +7,25 @@ also_reload('../models/*')
 
 # LIST ALL
 get '/treatments' do
-  @treatments = Treatments.find_all()
+  @treatments = Treatment.find_all()
   erb(:"treatments/index")
 end
 
 # GET NEW
-get '/treatments/new' do
+get '/treatments/new/:animal_id' do
+  animal_id = params['animal_id'].to_i
+  @animal = Animal.find(animal_id)
+  # @treatments = animal.treatments()
   erb(:"treatments/new")
 end
 
 # DELETE
 get '/treatments/remove/:id' do
   id = params['id'].to_i
-  treatment = Treatments.find(id)
+  treatment = Treatment.find(id)
   treatment.delete
-  redirect '/treatments'
+  animal_id = treatment.animal_id
+  redirect "/treatments/animal/#{animal_id}"
 end
 
 # SHOW
@@ -32,12 +36,12 @@ get '/treatments/animal/:animal_id' do
   erb(:"treatments/show")
 end
 
-# EDIT
-# get '/treatments/:id/edit' do
-#   id = params['id'].to_i
-#   @treatment = Treatment.find(id)
-#   erb(:"treatments/edit")
-# end
+#EDIT
+get '/treatments/:id/edit' do
+  id = params['id'].to_i
+  @treatment = Treatment.find(id)
+  erb(:"treatments/edit")
+end
 
 
 
@@ -45,12 +49,14 @@ end
 post '/treatments' do
   treatment = Treatment.new(params)
   treatment.save()
-  redirect '/treatments'
+  animal_id = treatment.animal_id
+  redirect "/treatments/animal/#{animal_id}"
 end
 
 # POST UPDATE
 post '/treatments/:id' do
   treatments = Treatment.new(params)
   treatments.update()
-  redirect '/treatments'
+  animal_id = treatments.animal_id
+  redirect "/treatments/animal/#{animal_id}"
 end

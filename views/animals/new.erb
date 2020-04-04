@@ -6,15 +6,15 @@
   <fieldset>
 
     <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="name" placeholder="Name" required>
 
 
     <label for="type">Type</label>
-    <input type="text" name="type" placeholder="Type">
+    <input type="text" name="type" placeholder="Type" required>
 
 
     <label for="dob">DoB</label>
-    <input type="date" name="dob" placeholder="DD/MM/YY">
+    <input type="date" name="dob" placeholder="DD/MM/YY" required>
 
     <label for="vet_id">Vet</label>
     <select name="vet_id">
@@ -37,12 +37,10 @@
       </select>
     <% else %>
     <input type="text" name="owner_name" value="<%= @owners.full_name() %>" disabled>
+
     <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
     <input type="text" name="owner_id" value="<%= @owners.id %>" hidden>
     <% end %>
-
-    <label for="treatment-notes">Treatment Notes</label>
-    <input type="text" name="treatment_notes" placeholder="Treatment Notes">
 
     <input class="btn cell" type='submit' value="Add">
   </fieldset>
