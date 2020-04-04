@@ -54,11 +54,11 @@ animal2 = Animal.new('name' => "Big bird", 'type' => "Bird", 'dob' => "03-07-00"
 animal2.save()
 
 checking1 = Checking.new('check_in' => '01/04/20', 'check_out' => '02-04-20',
-                         'animal_id' => animal1.id)
+                         'id' => animal1.id)
 checking1.save()
 
 checking2 = Checking.new('check_in' => '02/04/20', 'check_out' => '06-04-20',
-                         'animal_id' => animal2.id)
+                         'id' => animal2.id)
 checking2.save()
 
 binding.pry

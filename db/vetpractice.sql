@@ -28,9 +28,10 @@ CREATE TABLE animals (
   vet_id INT REFERENCES vets(id) ON DELETE CASCADE
 );
 
+-- Checkings table has a one to one relationship
+-- with animals so animals id used for table key.
 CREATE TABLE checkings (
-  id SERIAL PRIMARY KEY,
+  id INT REFERENCES animals(id) ON DELETE CASCADE,
   check_in DATE,
-  check_out DATE,
-  animal_id INT REFERENCES animals(id) ON DELETE CASCADE
+  check_out DATE
 );

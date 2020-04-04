@@ -121,10 +121,11 @@ class Animal
   def checking()
     sql = "SELECT checkings.* FROM checkings
            INNER JOIN animals
-           ON checkings.animal_id = animals.id
+           ON checkings.id = animals.id
            WHERE animals. id = $1"
     values = [@id]
     result = SqlRunner.run(sql, values)
+    return nil if result.first == nil
     return result.map {|checking| Checking.new(checking)}.first
   end
 

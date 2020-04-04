@@ -36,7 +36,16 @@
       </table>
 
       <p></p>
-
+      <!-- We check to see if there is an chekings entry for this animal. -->
+      <!-- If there isn't then the link will route you to the new checkings route -->
+      <% if @animal.checking() == nil %>
+        <a class="item_select cell" href="/checkings/new/<%= @animal.id %>">
+      <% else %>
+        <a class="item_select cell" href="/checkings/<%= @animal.id %>/edit">
+      <% end %>
+            <label for="">Check In/Out</label>
+        </a>
+      <!-- ----------------------------------------------------------------- -->
       <a class="item_select cell" href="/animals/<%= @animal.id %>/edit">
           <label for="">Edit</label>
       </a>
@@ -46,9 +55,11 @@
     </fieldset>
 
   <p></p>
-
-  <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
-      <label for="">Owner Details</label>
-  </a>
+ <fieldset>
+   <legend>Owner</legend>
+    <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
+        <label for="">Owner Details</label>
+    </a>
+  </fieldset>
 
 </div>

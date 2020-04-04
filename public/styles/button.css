@@ -3,6 +3,32 @@ button {
 
 }
 
+.btn_normal {
+
+  font-size: 1.2rem;
+  display: flex;
+  /* flex-direction: column; */
+
+  align-self: center;
+  /* width: auto; */
+  /* max-width: 100%; */
+  /* min-width: 200px; */
+  border-style:solid;
+  border-width: 1px;
+  border-color: #e8e8e8;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin:3px;
+  background-color: #2EE88E;
+  text-decoration: none;
+}
+
+.btn_normal:hover {
+  background-color: #257E53;
+  border-radius: 5px;
+}
+
+
 .btn_warning {
   background-color: #e34f4f;
 }

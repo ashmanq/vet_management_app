@@ -5,45 +5,48 @@ require('date')
 class Checking
 
   attr_reader :id
-  attr_accessor :check_in, :check_out, :animal_id
+  attr_accessor :check_in, :check_out
 
   def initialize(options)
-    @id = options['id'].to_i if options['id']
+    @id = options['id'].to_i
     @check_in = options['check_in']
     @check_out = options['check_out']
-    @animal_id = options['animal_id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO checkings
-            (
-              check_in,
-              check_out,
-              animal_id
-            )
-            VALUES
-            (
-              $1, $2, $3
-            )
-            RETURNING id"
-    values = [@check_in, @check_out, @animal_id]
-    @id = SqlRunner.run(sql, values).first['id']
+    # Check if check out is after check in otherwise don't save
+    if check_dates == true
+      sql = "INSERT INTO checkings
+              (
+                id,
+                check_in,
+                check_out
+              )
+              VALUES
+              (
+                $1, $2, $3
+              )"
+      values = [@id, @check_in, @check_out]
+      SqlRunner.run(sql, values)
+    end
   end
 
   def update()
-    sql = "UPDATE checkings SET
-           (
-             check_in,
-             check_out,
-             animal_id
-            )
-            =
-            (
-              $1, $2, $3
-            )
-            WHERE id = $4"
-    values = [@check_in, @check_out, @animal_id, @id]
-    SqlRunner.run(sql, values)
+    # Check if check out is after check in otherwise don't update
+    if check_dates == true
+      sql = "UPDATE checkings SET
+             (
+               check_in,
+               check_out
+              )
+              =
+              (
+                $1, $2
+              )
+              WHERE id = $3"
+      values = [@check_in, @check_out, @id]
+      SqlRunner.run(sql, values)
+    end
   end
 
   def delete()
@@ -86,6 +89,11 @@ class Checking
 
   def get_check_out()
     return format_date(@check_out)
+  end
+
+  def check_dates()
+    return true if @check_out > @check_in
+    return false
   end
 
 end
