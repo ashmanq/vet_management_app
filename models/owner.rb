@@ -103,4 +103,20 @@ class Owner
     return result.map {|animal| Animal.new(animal)}
   end
 
+  #method to get total of outstanding bills for an owner
+  def total_owed()
+    sql = "SELECT SUM(treatments.bill)
+          FROM ((treatments
+          INNER JOIN animals
+          ON animals.id = treatments.animal_id)
+          INNER JOIN owners
+          ON owners.id = animals.owner_id)
+          WHERE owners.id = $1
+          AND treatments.paid=false";
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return nil if result.first == nil
+    return result.first['sum']
+  end
+
 end
