@@ -50,5 +50,5 @@ end
 post '/owners/:id' do
   owner = Owner.new(params)
   owner.update()
-  redirect '/owners'
+  redirect "/owners/#{owner.id}"
 end

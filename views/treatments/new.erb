@@ -1,6 +1,6 @@
 <p></p>
 <h2>Add Treatment Information</h2>
-<h2><%= @animal.name %></h2>
+<h2>Animal Name: <%= @animal.name %></h2>
 
 <form class="list" action="/treatments" method="POST">
   <fieldset>
@@ -13,6 +13,11 @@
 
     <label for="bill">Cost</label>
     <input type="number" name="bill" required>
+
+    <select name="paid" id="paid">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
 
     <label for="tr_date">Date</label>
     <input type="date" name="tr_date" required>

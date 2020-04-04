@@ -1,7 +1,7 @@
 <p></p>
 <h1>Treatment History</h1>
 
-<h2><%= @animal.name %> </h2>
+<h2>Animal Name: <%= @animal.name %> </h2>
 
 <section class="container con-col">
 
@@ -11,6 +11,7 @@
           <th>Treatment Details</th>
           <th>Cost (£)</th>
           <th>Date</th>
+          <th>Paid</th>
           <th>  </th>
         </tr>
         <% for treatment in @treatments %>
@@ -21,6 +22,14 @@
 
           <td> <%= treatment.bill %></td>
           <td> <%= treatment.tr_date %></td>
+          <td>
+            <% if treatment.paid == 'f'%>
+                <%= p "No" %>
+              <% else %>
+                <%= p "Yes" %>
+              <% end %>
+            </td>
+
           <td> <a href="/treatments/<%= treatment.id%>/edit"</a>Edit</td>
           </tr>
 
@@ -29,17 +38,16 @@
 
       <p></p>
 
-      <!-- <a class="item_select cell" href="/treatments/<%= @animal.id %>/edit">
-          <label for="">Edit</label>
-      </a> -->
+
       <% else %>
         <h3 class="warning_msg">No treatments listed in system.</h3>
       <% end %>
-
+      <!-- We only add treatments if owner is registered. -->
+      <% if @animal.owner().registered == 't' %>
       <a class="item_select cell" href="/treatments/new/<%= @animal.id %>">
           <label for="">Add Treatment</label>
       </a>
-
+      <% end %>
 
     <a class="item_select cell" href="/animals/<%= @animal.id %>">
         <label for="">Back To Pet Details</label>

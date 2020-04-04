@@ -61,7 +61,7 @@ class Animal
             (
               $1, $2, $3, $4, $5
             )
-            WHERE id = $7"
+            WHERE id = $6"
       values = [@name, @type, @dob, @owner_id, @vet_id, @id]
       SqlRunner.run(sql, values)
   end

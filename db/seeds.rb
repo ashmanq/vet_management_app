@@ -65,10 +65,10 @@ checking2 = Checking.new('check_in' => '02/04/20', 'check_out' => '06-04-20',
 checking2.save()
 
 treatment1 = Treatment.new('details' => 'some words', 'bill' => 100,
-                            'animal_id' => animal1.id,  'tr_date'=> "03-04-2020")
+                            'animal_id' => animal1.id,  'tr_date'=> "03-04-2020", 'paid' => false)
 treatment1.save()
 treatment2 = Treatment.new('details' => 'some words', 'bill' => 100,
-                            'animal_id' => animal1.id, 'tr_date'=> "03-04-2020")
+                            'animal_id' => animal1.id, 'tr_date'=> "03-04-2020", 'paid' => false)
 treatment2.save()
 
 # treatment3 = Treatment.new('details' => 'some words', 'bill' => 100,
@@ -76,7 +76,7 @@ treatment2.save()
 # treatment3.save()
 
 treatment4 = Treatment.new('details' => 'some words', 'bill' => 100,
-                            'animal_id' => animal2.id, 'tr_date'=> '01-03-2020')
+                            'animal_id' => animal2.id, 'tr_date'=> '01-03-2020', 'paid' => true)
 treatment4.save()
 
 binding.pry
