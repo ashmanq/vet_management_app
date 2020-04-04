@@ -1,9 +1,9 @@
 <h1><%= @animal.name %></h1>
 
-<div class="display_list">
+<!-- <div class="display_list"> -->
+<section class="container">
 
-  <fieldset>
-    <legend>Animal</legend>
+
       <table class="cell">
         <tr>
           <th>Type</th>
@@ -52,14 +52,13 @@
       <a class="item_select cell btn_warning" href="/animals/remove/<%= @animal.id %>">
           <label for="">Remove</label>
       </a>
-    </fieldset>
+
 
   <p></p>
- <fieldset>
-   <legend>Owner</legend>
+
     <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
         <label for="">Owner Details</label>
     </a>
-  </fieldset>
 
-</div>
+</section>
+<!-- </div> -->

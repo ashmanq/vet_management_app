@@ -1,33 +1,38 @@
-<h1>Animals</h1>
-
-<div class="list">
-  <a class="item_select cell" href="/animals/new">
-      <h3>Add Animal</h3>
-      <img src="" alt="">
-  </a>
-
-  <a class="item_select cell" href="/checkings">
-      <h3>Checked In</h3>
-      <img src="" alt="">
-  </a>
-
-</div>
-
 <p></p>
-<p></p>
-<h2>Click name below for details</h2>
+<section class="container">
+  <h2 class="container_text">Animals</h2>
 
-<div class="list">
-  <% if @animals != nil %>
-    <% for animal in @animals %>
-      <a class="item_select cell" href="/animals/<%= animal.id %>">
-          <h2> <%= animal.name %> </h2>
-          <h2> <%= animal.type %> </h2>
-          <img src="" alt="">
-      </a>
+  <div class="list">
+    <a class="item_select cell" href="/animals/new">
+        <h3 class="btn_title">Register Animal</h3>
+        <img src="" alt="">
+    </a>
+
+    <a class="item_select cell" href="/checkings">
+        <h3 class="btn_title">Checked In</h3>
+        <img src="" alt="">
+    </a>
+
+  </div>
+</section>
+<p></p>
+
+<section class="container">
+  <h2 class="container_text">Animals Registered to Practice</h2>
+  <h3 class="container_text">Click name below for details</h3>
+
+  <div class="list">
+    <% if @animals != nil %>
+      <% for animal in @animals %>
+        <a class="item_select cell" href="/animals/<%= animal.id %>">
+            <h3 class="btn_title"> <%= animal.name %> </h3>
+            <h3 class="btn_title"> <%= animal.type %> </h3>
+            <img src="" alt="">
+        </a>
+      <% end %>
+      <% else %>
+        <h3 class="warning_msg">No animals in system</h3>
     <% end %>
-    <% else %>
-      <h3 class="warning_msg">No animals in system</h3>
-  <% end %>
 
-<div>
+  <div>
+</section>

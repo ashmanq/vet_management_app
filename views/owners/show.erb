@@ -1,8 +1,8 @@
 
-<section class="list">
-  <fieldset>
-    <legend>Owner</legend>
-    <h1><%= @owner.full_name %></h1>
+<h1><%= @owner.full_name %></h1>
+
+<section class="container">
+  <!-- <fieldset> -->
     <table class="cell">
       <tr>
         <th>Address</th>
@@ -47,13 +47,13 @@
 
 
 
-  </fieldset>
+  <!-- </fieldset> -->
 </section>
 
 
-<h2>Owner of:</h2>
+<h2 class="btn_title">Owner of:</h2>
 
-<section class="list">
+<section class="container">
   <% if @animals != nil %>
     <% for animal in @animals %>
       <a class="item_select cell" href="/animals/<%= animal.id %>">

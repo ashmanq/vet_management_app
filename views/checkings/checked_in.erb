@@ -1,21 +1,21 @@
-<h1>Animals Checked Into Practice</h1>
-
-
 <p></p>
-<p></p>
-<h2>Click name below for details</h2>
+<section class="container">
+  <h2 class="container_text">Animals Checked Into Practice</h2>
 
-<div class="list">
-  <% if @animals != nil %>
-    <% for animal in @animals %>
-      <a class="item_select cell" href="/animals/<%= animal.id %>">
-          <h2> <%= animal.name %> </h2>
-          <h2> <%= animal.type %> </h2>
-          <img src="" alt="">
-      </a>
+  <h3 class="container_text">Click name below for details</h3>
+
+  <div class="list">
+    <% if @animals != nil %>
+      <% for animal in @animals %>
+        <a class="item_select cell" href="/animals/<%= animal.id %>">
+            <h3> <%= animal.name %> </h3>
+            <h3> <%= animal.type %> </h3>
+            <img src="" alt="">
+        </a>
+      <% end %>
+      <% else %>
+        <h3 class="warning_msg">No animals currently checked in</h3>
     <% end %>
-    <% else %>
-      <h3 class="warning_msg">No animals currently checked in</h3>
-  <% end %>
 
-<div>
+  <div>
+</section>

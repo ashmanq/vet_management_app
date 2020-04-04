@@ -2,25 +2,30 @@ form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  font-size: 1.5em;
+  /* font-size: 1.0em; */
   width:50%;
   align-self: center;
   /* align-items: center; */
   padding-top: 20px;
   text-align: center;
-
+}
+fieldset{
+  background-color: #32ad71 ;
+  border-radius: 10px;
+  border-style: hidden;
 }
 
 label {
   display:block;
   width: 100%;
   text-align: center;
+  color: black;
 }
 
 form input, select{
   display:block
   width: 100%;
-  font-size: 1.4em;
+  font-size: 1.0em;
   text-align: center;
   padding: 5px;
   margin:5px;
@@ -43,12 +48,16 @@ input[type=submit]:hover, .delete_button:hover{
   background-color: #257E53;
 }
 
- input[type=text], input[type=number]{
-   font-size: 1.5rem;
-   text-align: center;
- }
+input[type=text], input[type=number]{
+  font-size: 1.0rem;
+  text-align: center;
+}
 
- input:disabled{
-   background-color: #bfbdbd;
-   border-style: none;
- }
+input:disabled{
+  background-color: #bfbdbd;
+  border-style: none;
+}
+
+select {
+  width:100%
+}

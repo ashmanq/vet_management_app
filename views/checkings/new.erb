@@ -1,19 +1,24 @@
-<form class="" action="/checkings" method="POST">
-  <fieldset>
-    <h3>Check In/Out</h3>
+<p></p>
+<section class="container">
 
-    <!-- id for animal is required but is hidden from user so they dont edit it -->
-    <input type="text" name="id" value="<%= @animal.id %>" hidden>
+  <form class="list" action="/checkings" method="POST">
 
-    <label for="name">Animal Name</label>
-    <input type="text" name="first_name" value="<%= @animal.name %>" disabled>
+      <h3>Check In/Out</h3>
 
-    <label for="name" id="check_in">Check In Date</label>
-    <input type="date" name="check_in">
+      <!-- id for animal is required but is hidden from user so they dont edit it -->
+      <input type="text" name="id" value="<%= @animal.id %>" hidden>
 
-    <label for="name" id="check_out" min=check_in.>Check Out Date</label>
-    <input type="date" name="check_out">
+      <label for="name">Animal Name</label>
+      <input type="text" name="first_name" value="<%= @animal.name %>" disabled>
 
-  </fieldset>
-  <input class="btn" type='submit' value="Add">
-</form>
+      <label for="name" id="check_in">Check In Date</label>
+      <input type="date" name="check_in">
+
+      <label for="name" id="check_out" min=check_in.>Check Out Date</label>
+      <input type="date" name="check_out">
+
+
+    <input class="btn" type='submit' value="Add">
+  </form>
+
+</section>

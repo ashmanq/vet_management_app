@@ -1,5 +1,6 @@
+<p></p>
 
-<form class="" action="/vets/<%= @vet.id %>" method="POST">
+<form class="list" action="/vets/<%= @vet.id %>" method="POST">
   <fieldset>
     <h3>Edit Details</h3>
 
@@ -9,6 +10,16 @@
     <label for="last_name">Last Name</label>
     <input type="text" name="last_name" placeholder="Last Name" value="<%= @vet.last_name %>">
 
+    <input class="btn cell" type='submit' value="Update">
+
+
   </fieldset>
-  <input class="btn" type='submit' value="Update">
 </form>
+
+<p></p>
+
+<div class="list">
+  <a class="item_select cell" href="/vets/<%= @vet.id %>">
+      <label for="">Cancel</label>
+  </a>
+</div>

@@ -3,22 +3,23 @@ button {
 
 }
 
+
 .btn_normal {
 
   font-size: 1.2rem;
   display: flex;
   /* flex-direction: column; */
 
-  align-self: center;
-  /* width: auto; */
+  align-items: center;
+  width: 100%;
   /* max-width: 100%; */
   /* min-width: 200px; */
   border-style:solid;
   border-width: 1px;
   border-color: #e8e8e8;
   border-radius: 5px;
-  padding: 10px 20px;
-  margin:3px;
+  padding: 8px 8px;
+  margin:32px;
   background-color: #2EE88E;
   text-decoration: none;
 }
@@ -31,4 +32,8 @@ button {
 
 .btn_warning {
   background-color: #e34f4f;
+}
+
+.btn_warning:hover {
+  background-color: #ab3a3a;
 }

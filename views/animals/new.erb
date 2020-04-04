@@ -1,7 +1,7 @@
 
-<form class="" action="/animals" method="POST">
+<form class="list" action="/animals" method="POST">
   <fieldset>
-    <h3>Add Animal</h3>
+    <h3>Register Animal</h3>
     <label for="name">Name</label>
     <input type="text" name="name" placeholder="Name">
 
@@ -40,13 +40,15 @@
 
     <label for="treatment-notes">Treatment Notes</label>
     <input type="text" name="treatment_notes" placeholder="Treatment Notes">
-  </fieldset>
-  <fieldset>
-    <label for="check_in">Check In Date</label>
-    <input type="date" name="check_in" placeholder="DD/MM/YY">
 
-    <label for="check_out">Check Out Date</label>
-    <input type="date" name="check_out" placeholder="DD/MM/YY">
+    <input class="btn cell" type='submit' value="Add">
   </fieldset>
-  <input class="btn" type='submit' value="Add">
+
 </form>
+
+<p></p>
+<div class="list">
+  <a class="item_select cell" href="/animals">
+      <label for="">Cancel</label>
+  </a>
+</div>
