@@ -1,5 +1,5 @@
 <p></p>
-<section class = "container">
+<section class = "container con-col">
   <h2 class="container_text">Veterinary Doctors</h2>
 
   <div class="list">
@@ -12,7 +12,7 @@
 
 <p></p>
 
-<section class = "container">
+<section class = "container con-col">
 
   <h2 class="container_text">Vets on system</h2>
   <h3 class="container_text">Click name below for details:</h3>
@@ -21,7 +21,7 @@
     <% if @vets != nil %>
       <% for vet in @vets %>
         <a class="item_select cell" href="/vets/<%= vet.id %>">
-            <h2 class="btn_title"> <%= vet.full_name %> </h2>
+            <h3 class="btn_title"> <%= vet.full_name %> </h3>
             <img src="" alt="">
         </a>
       <% end %>
