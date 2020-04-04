@@ -3,6 +3,7 @@ table {
   flex-direction: column;
   padding: 10px;
   text-align: center;
+
 }
 
 tbody {
@@ -20,6 +21,9 @@ tbody {
   text-decoration: none;
 }
 
+tr {
+  font-size: 1.2em;
+}
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }

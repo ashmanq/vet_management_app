@@ -1,0 +1,42 @@
+<h1><%= @animal.name %> Treatments</h1>
+
+<section class="container con-col">
+
+    <% if @treatments != nil %>
+      <table class="cell">
+        <tr>
+          <th>Treatment Details</th>
+          <th>Cost</th>
+          <th>Date</th>
+        </tr>
+        <% for treatment in @treatments %>
+
+          <tr>
+
+          <td> <a href="#top"><%= treatment.details %> </a></td>
+
+          <td> <%= treatment.bill %></td>
+          <td> <%= treatment.tr_date %></td>
+          </tr>
+
+        <% end %>
+      </table>
+
+      <p></p>
+
+      <a class="item_select cell" href="/treatments/<%= @animal.id %>/edit">
+          <label for="">Edit</label>
+      </a>
+      <% else %>
+        <h3 class="warning_msg">No treatments listed in system.</h3>
+      <% end %>
+
+      <a class="item_select cell" href="/animals/<%= @animal.id %>">
+          <label for=""></label>
+      </a>
+
+    <a class="item_select cell" href="/animals/<%= @animal.id %>">
+        <label for="">Back To Pet Details</label>
+    </a>
+
+</section>

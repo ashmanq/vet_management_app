@@ -1,6 +1,6 @@
-<h1><%= @animal.name %></h1>
+<h1>Pet Details</h1>
+<h2><%= @animal.name %></h2>
 
-<!-- <div class="display_list"> -->
 <section class="container con-col">
 
 
@@ -63,5 +63,8 @@
         <label for="">Owner Details</label>
     </a>
 
+    <a class="item_select cell" href="/treatments/animal/<%= @animal.id %>">
+        <label for="">Treatment Details</label>
+    </a>
+
 </section>
-<!-- </div> -->

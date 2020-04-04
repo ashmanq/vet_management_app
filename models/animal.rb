@@ -129,5 +129,16 @@ class Animal
     return result.map {|checking| Checking.new(checking)}.first
   end
 
+  def treatments()
+    sql = "SELECT treatments.* FROM treatments
+           INNER JOIN animals
+           ON animals.id = treatments.animal_id
+           WHERE animals.id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return nil if results.first == nil
+    return results.map {|treatment| Treatment.new(treatment)}
+  end
+
 
 end

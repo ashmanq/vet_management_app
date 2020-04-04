@@ -18,7 +18,9 @@ h1,  h2,  h3,  h4 {
 .container_text {
   color: #ededed;
 }
-
+.no_decor {
+  text-decoration: none;
+}
 p{
   text-align: center;
 }
@@ -41,6 +43,7 @@ p{
   flex-wrap: wrap;
   align-self: center;
   justify-content: center;
+  max-width: 80%;
   background-color: #32ad71;
   padding:20px;
   border-radius: 10px;

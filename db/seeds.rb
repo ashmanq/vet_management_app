@@ -2,12 +2,15 @@ require_relative( "../models/animal.rb" )
 require_relative( "../models/vet.rb" )
 require_relative( "../models/owner.rb" )
 require_relative( "../models/checking.rb" )
+require_relative( "../models/treatment.rb" )
+require_relative( "../models/appointment.rb" )
 require("pry-byebug")
 
 Vet.delete_all()
 Animal.delete_all()
 Owner.delete_all()
 Checking.delete_all()
+Treatment.delete_all()
 
 vet1 = Vet.new('first_name' => "James", 'last_name' => "Sullivan")
 vet1.save()
@@ -60,6 +63,21 @@ checking1.save()
 checking2 = Checking.new('check_in' => '02/04/20', 'check_out' => '06-04-20',
                          'id' => animal2.id)
 checking2.save()
+
+treatment1 = Treatment.new('details' => 'some words', 'bill' => 100,
+                            'animal_id' => animal1.id,  'tr_date'=> "03-04-2020")
+treatment1.save()
+treatment2 = Treatment.new('details' => 'some words', 'bill' => 100,
+                            'animal_id' => animal1.id, 'tr_date'=> "03-04-2020")
+treatment2.save()
+
+# treatment3 = Treatment.new('details' => 'some words', 'bill' => 100,
+#                             'animal_id' => animal2.id, 'tr_date'=> "18-02-2019")
+# treatment3.save()
+
+treatment4 = Treatment.new('details' => 'some words', 'bill' => 100,
+                            'animal_id' => animal2.id, 'tr_date'=> '01-03-2020')
+treatment4.save()
 
 binding.pry
 nil
