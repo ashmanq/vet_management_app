@@ -102,6 +102,11 @@ p{
   color: #912a2a;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  flex:1;
+}
 nav{
   align-self: center;
   font-size: 1.5em;

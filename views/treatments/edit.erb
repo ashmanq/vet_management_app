@@ -1,7 +1,7 @@
 <p></p>
 
 <h2>Edit Treatment Information</h2>
-<h2>Animal Name: <%= @treatment.animal().name%></h2>
+<h2>Animal: <%= @treatment.animal().name%></h2>
 
 <form class="list" action="/treatments/<%= @treatment.id %>" method="POST">
   <fieldset>
@@ -32,7 +32,7 @@
 </form>
 <p></p>
 <div class="list">
-  <a class="item_select cell" href="/treatments/remove/<%= @treatment.id %>">
+  <a class="item_select cell btn_warning" href="/treatments/remove/<%= @treatment.id %>">
       <label for="">Delete</label>
   </a>
   <a class="item_select cell" href="/treatments/animal/<%= @treatment.animal_id %>">

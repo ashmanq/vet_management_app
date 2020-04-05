@@ -9,11 +9,12 @@
     <input type="text" name="animal_id" value="<%= @animal.id %>" hidden>
 
     <label for="details">Treatment Details</label>
-    <input type="text" name="details" required>
+    <textarea name="details" rows="8" cols="40" required></textarea>
 
     <label for="bill">Cost</label>
     <input type="currency" name="bill" required>
 
+    <label for="paid">Bill Paid</label>
     <select name="paid" id="paid">
       <option value="0">No</option>
       <option value="1">Yes</option>

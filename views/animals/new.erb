@@ -1,51 +1,57 @@
 
 <p></p>
 <h2>Register Animal</h2>
+<% if @owners != nil && @vets != nil %>
+  <form class="list" action="/animals" method="POST">
+    <fieldset>
 
-<form class="list" action="/animals" method="POST">
-  <fieldset>
-
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Name" required>
-
-
-    <label for="type">Type</label>
-    <input type="text" name="type" placeholder="Type" required>
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Name" required>
 
 
-    <label for="dob">DoB</label>
-    <input type="date" name="dob" placeholder="DD/MM/YY" required>
+      <label for="type">Type</label>
+      <input type="text" name="type" placeholder="Type" required>
 
-    <label for="vet_id">Vet</label>
-    <select name="vet_id">
-      <% if @vets != nil %>
-        <% for vet in @vets %>
-        <option value="<%= vet.id %>"><%= vet.full_name %></option>
-        <% end %>
-      <% end %>
-    </select>
 
-    <label for="owner_id">Owner</label>
-    <% if @owners.kind_of?(Array)%>
-      <select name="owner_id">
-        <% if @owners != nil %>
-            <% for owner in @owners %>
-               <option value="<%= owner.id %>">
-                <%= owner.full_name %></option>
-            <% end %>
+      <label for="dob">DoB</label>
+      <input type="date" name="dob" placeholder="DD/MM/YY" required>
+
+      <label for="vet_id">Vet</label>
+      <select name="vet_id">
+        <% if @vets != nil %>
+          <% for vet in @vets %>
+          <option value="<%= vet.id %>"><%= vet.full_name %></option>
+          <% end %>
         <% end %>
       </select>
-    <% else %>
-    <input type="text" name="owner_name" value="<%= @owners.full_name() %>" disabled>
 
-    <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
-    <input type="text" name="owner_id" value="<%= @owners.id %>" hidden>
-    <% end %>
+      <label for="owner_id">Owner</label>
 
-    <input class="btn cell" type='submit' value="Add">
-  </fieldset>
+        <% if @owners.kind_of?(Array)%>
+          <select name="owner_id">
+            <%# <% if @owners != nil %> %>
+                <% for owner in @owners %>
+                   <option value="<%= owner.id %>">
+                    <%= owner.full_name %></option>
+                <% end %>
+            <%# <% end %> %>
+          </select>
 
-</form>
+      <% else %>
+      <input type="text" name="owner_name" value="<%= @owners.first().full_name() %>" disabled> %>
+
+      <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
+      <input type="text" name="owner_id" value="<%= @owners.id %>" hidden>
+      <% end %>
+
+      <input class="btn cell" type='submit' value="Add">
+    </fieldset>
+
+  </form>
+<% else %>
+  <h2 class="warning_msg">No owners and/or vets in database to register animals to</h2>
+
+<% end %>
 
 <p></p>
 <div class="list">

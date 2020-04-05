@@ -33,10 +33,9 @@ form input, select{
   margin:5px;
 }
 
-/* textarea{
-  display: block;
-  width: 100%;
-} */
+textarea{
+  font-size: 1.0em;
+}
 
 
 
@@ -46,9 +45,11 @@ input[type=submit], .delete_button{
   border:5px;
   /* font-size: 1.2rem; */
   background-color: #2EE88E;
+  width:80%;
   text-align: center;
+  align-content: center;
   text-decoration: none;
-  color: black;
+  color: #464a52;
 }
 input[type=submit]:hover, .delete_button:hover{
   background-color: #257E53;
