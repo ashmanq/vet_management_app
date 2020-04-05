@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('../models/appointment')
 
 
 class Vet
@@ -80,6 +81,17 @@ class Vet
     results = SqlRunner.run(sql, values)
     return nil if results.first == nil
     return results.map {|animal| Animal.new(animal)}
+  end
+
+  def appointments()
+    sql = "SELECT appointments.* FROM appointments
+           INNER JOIN vets
+           ON appointments.vet_id = vets.id
+           WHERE vets.id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return nil if results.first == nil
+    return results.map {|appointment| Appointment.new(appointment)}
   end
 
 end

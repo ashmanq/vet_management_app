@@ -1,21 +1,22 @@
-
 <p></p>
-<h1>Appointments List</h1>
-<!-- <section class="container con-col">
+<h1>Appointments</h1>
+<h2>Vet Name: <%= @vet.full_name()%></h2>
+
+<section class="container con-col">
   <h2 class="container_text">Options</h2>
 
   <div class="list">
-    <a class="item_select cell" href="/appointments/new">
+    <a class="item_select cell" href="/appointments/<%= @vet.id %>/new">
         <h3>Add Appointment</h3>
         <img src="" alt="">
     </a>
   </div>
-</section> -->
+</section>
 
 <p></p>
 <section class="container con-col">
 
-<!-- <h2 class="container_text">Appointments List</h2> -->
+<h2 class="container_text">Appointments List</h2>
 
   <% if @appointments != nil %>
     <table>

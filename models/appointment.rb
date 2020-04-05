@@ -17,7 +17,7 @@ class Appointment
   def save()
     # We check that there isnt an existing appointment
     # for vet at same date/time
-    if check_app_clash !=nil
+    # if check_app_clash !=nil
       sql = "INSERT INTO appointments
             (
               app_date,
@@ -33,7 +33,7 @@ class Appointment
             RETURNING id"
       values = [@app_date, @app_time, @notes, @animal_id, @vet_id]
       @id = SqlRunner.run(sql, values).first['id']
-    end
+    # end
   end
 
   def update()

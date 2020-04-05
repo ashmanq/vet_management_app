@@ -19,7 +19,7 @@
     <input type="time" name="app_time" value="<%= @appointment.app_time %>" required>
 
     <label for="notes">Notes</label>
-    <textarea name="notes" rows="8" cols="40" value="<%= @appointment.notes %>"></textarea>
+    <textarea name="notes" rows="8" cols="40"><%= @appointment.notes %></textarea>
 
 
     <input class="btn cell" type='submit' value="Update">

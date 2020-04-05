@@ -5,6 +5,9 @@
 <h2>Vet Name: <%= @vet.full_name %></h2>
 
 <section class="container con-col">
+  <a class="item_select cell" href="/vets/appointments/<%= @vet.id %>">
+      <label for="">Appointments</label>
+  </a>
 
   <a class="item_select cell" href="/vets">
       <label for="">Return to Vets</label>
@@ -19,13 +22,15 @@
 
 </section>
 
+
+
 <h2>Responsible for:</h2>
 <section class="container">
   <% if @animals != nil %>
     <% for animal in @animals %>
       <a class="item_select cell" href="/animals/<%= animal.id %>">
           <h2> <%= animal.name %> </h2>
-          <p> <%= animal.type %> </p>
+          <h4> <%= animal.type %> </h4>
           <img src="" alt="">
       </a>
     <% end %>

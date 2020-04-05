@@ -1,0 +1,38 @@
+<h1>Add Appointment</h1>
+<h2><%= @vet.full_name() %></h2>
+
+<form class="list" action="/appointments" method="POST">
+  <fieldset>
+
+    <input type="text" name="vet_id" value="<%= @vet.id %>" hidden>
+
+    <label for="app_date">Date</label>
+    <input type="date" name="app_date" required>
+
+    <label for="app_time">Time</label>
+    <input type="time" name="app_time" required>
+
+    <label for="animal_id">Animal</label>
+    <% if @animals != nil %>
+      <select name="animal_id" id="animal_id">
+          <% for animal in @animals %>
+            <option value="<%= animal.id %>"> <%= animal.name%></option>
+          <% end %>
+      </select>
+    <% else %>
+      <label for="">No animals to choose from</label>
+    <% end %>
+    <label for="notes">Notes</label>
+    <textarea name="notes" rows="8" cols="40" required></textarea>
+
+    <input class="btn cell" type='submit' value="Add">
+  </fieldset>
+
+
+</form>
+<p></p>
+<div class="list">
+  <a class="item_select cell" href="/appointments">
+      <label for="">Cancel</label>
+  </a>
+</div>

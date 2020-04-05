@@ -38,6 +38,15 @@ get '/vets/:id' do
   erb(:"vets/show")
 end
 
+get '/vets/appointments/:vet_id' do
+  vet_id = params['vet_id'].to_i
+  @vet = Vet.find(vet_id)
+  @animals = @vet.animals()
+  @appointments = @vet.appointments()
+  # @treatments = animal.treatments()
+  erb(:"vets/appointments")
+end
+
 # POST NEW
 post '/vets' do
   vet = Vet.new(params)
