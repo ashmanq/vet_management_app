@@ -1,32 +1,30 @@
 <p></p>
 <h2>Edit Checking Details</h2>
+<section class="container">
+  <form action="/checkings/<%= @animal.id %>" method="POST">
 
-<form class="list" action="/checkings/<%= @animal.id %>" method="POST">
-  <fieldset>
+      <!-- id for animal is required but is hidden from user so they dont edit it -->
+      <input type="text" name="id" value="<%= @animal.id %>" hidden>
 
-    <!-- id for animal is required but is hidden from user so they dont edit it -->
-    <input type="text" name="id" value="<%= @animal.id %>" hidden>
+      <label for="name">Animal Name</label>
+      <input type="text" name="name" value="<%= @animal.name %>" disabled>
 
-    <label for="name">Animal Name</label>
-    <input type="text" name="first_name" value="<%= @animal.name %>" disabled>
+      <label for="name">Check In Date</label>
+      <input type="date" name="check_in" value="<%= @animal.checking().check_in %>">
 
-    <label for="name">Check In Date</label>
-    <input type="date" name="check_in" value="<%= @animal.checking().check_in %>">
+      <label for="name">Check Out Date</label>
+      <input type="date" name="check_out" value="<%= @animal.checking().check_out %>">
 
-    <label for="name">Check Out Date</label>
-    <input type="date" name="check_out" value="<%= @animal.checking().check_out %>">
+      <input class="btn cell" type='submit' value="Update">
 
-    <input class="btn cell" type='submit' value="Update">
-  </fieldset>
-
-
-</form>
+  </form>
+</section>
 <p></p>
-<div class="list">
+<section class="list">
   <a class="item_select cell" href="/checkings/remove/<%= @animal.id %>">
       <label for="">Clear Checking</label>
   </a>
   <a class="item_select cell" href="/animals/<%= @animal.id %>">
       <label for="">Cancel</label>
   </a>
-</div>
+</section>

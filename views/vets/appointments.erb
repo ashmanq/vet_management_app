@@ -36,7 +36,7 @@
           <td><%= appointment.animal().name %></td>
           <td><%= appointment.animal().type %></td>
           <td><%= appointment.vet().full_name() %></td>
-          <td><a href="appointments/<%= appointment.id %>">Details</a></td>
+          <td><a href="/appointments/<%= appointment.id %>">Details</a></td>
         </tr>
       <% end %>
     </table>

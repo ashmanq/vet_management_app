@@ -1,15 +1,14 @@
 <p></p>
+<h2>Add Checking Details</h2>
+<p></p>
 <section class="container">
-
-  <form class="list" action="/checkings" method="POST">
-
-      <h3>Check In/Out</h3>
+  <form action="/checkings" method="POST">
 
       <!-- id for animal is required but is hidden from user so they dont edit it -->
       <input type="text" name="id" value="<%= @animal.id %>" hidden>
 
       <label for="name">Animal Name</label>
-      <input type="text" name="first_name" value="<%= @animal.name %>" disabled>
+      <input type="text" name="name" value="<%= @animal.name %>" disabled>
 
       <label for="name" id="check_in">Check In Date</label>
       <input type="date" name="check_in" required>
@@ -17,8 +16,12 @@
       <label for="name" id="check_out" min=check_in.>Check Out Date</label>
       <input type="date" name="check_out">
 
-
-    <input class="btn" type='submit' value="Add">
+    <input class="btn cell" type='submit' value="Add">
   </form>
-
+</section>
+<p></p>
+<section class="list">
+  <a class="item_select cell" href="/animals/<%= @animal.id %>">
+      <label for="">Cancel</label>
+  </a>
 </section>

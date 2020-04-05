@@ -29,7 +29,6 @@ p{
    font-size: 1rem;
  }
 
-
 .list {
   display: flex;
   flex-direction: row;
@@ -59,7 +58,6 @@ p{
 }
 
 
-
 .list a {
   text-decoration: none;
 }
@@ -83,8 +81,10 @@ p{
 }
 
 .logo {
-  width: 150px;
-  height:150px;
+  width: 200px;
+  height:200px;
+  justify-content: center;
+  align-self: center;
 }
 
 .student_select {
