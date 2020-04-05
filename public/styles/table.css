@@ -1,11 +1,15 @@
 table {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   padding: 10px;
   text-align: center;
 
 }
 
+.table_container {
+  display:flex;
+  overflow-x: auto;
+}
 tbody {
   align-items: center;
 }
@@ -23,6 +27,7 @@ tbody {
 
 tr {
   font-size: 1.4em;
+  padding:10px;
 }
 tr:nth-child(even) {
   background-color: #f2f2f2;

@@ -1,17 +1,20 @@
+<p></p>
+
 <h1>Vet Details</h1>
+
 <h2>Vet Name: <%= @vet.full_name %></h2>
 
 <section class="container con-col">
 
-  <a class="item_select cell" href="/vets/<%= @vet.id %>/edit">
-      <label for="">Edit</label>
-  </a>
-  <a class="item_select cell btn_warning" href="/vets/remove/<%= @vet.id %>">
-      <label for="">Remove</label>
+  <a class="item_select cell" href="/vets">
+      <label for="">Return to Vets</label>
   </a>
   <p></p>
-  <a class="item_select cell" href="/vets">
-      <label for="">Back to List</label>
+  <a class="item_select cell" href="/vets/<%= @vet.id %>/edit">
+      <label for="">Edit Details</label>
+  </a>
+  <a class="item_select cell btn_warning" href="/vets/remove/<%= @vet.id %>">
+      <label for="">Remove Vet</label>
   </a>
 
 </section>

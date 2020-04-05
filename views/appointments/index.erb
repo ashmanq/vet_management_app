@@ -15,34 +15,33 @@
 <p></p>
 <section class="container con-col">
 
-  <h2 class="container_text">Appointments List</h2>
+<h2 class="container_text">Appointments List</h2>
 
-  <div class="list">
-    <% if @appointments != nil %>
-      <table>
+  <% if @appointments != nil %>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Animal Name</th>
+        <th>Animal Type</th>
+        <th>Vet Name</th>
+        <th>Click For Details</th>
+      </tr>
+      <!-- We cycle through all the appointments -->
+      <% for appointment in @appointments %>
         <tr>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Animal Name</th>
-          <th>Animal Type</th>
-          <th>Vet Name</th>
-          <th>Click For Details</th>
+          <td><%= appointment.get_app_date() %></td>
+          <td><%= appointment.app_time %></td>
+          <td><%= appointment.animal().name %></td>
+          <td><%= appointment.animal().type %></td>
+          <td><%= appointment.vet().full_name() %></td>
+          <td><a href="appointments/<%= appointment.id %>">Details</a></td>
         </tr>
-        <!-- We cycle through all the appointments -->
-        <% for appointment in @appointments %>
-          <tr>
-            <td><%= appointment.app_date %></td>
-            <td><%= appointment.app_time %></td>
-            <td><%= appointment.animal().name %></td>
-            <td><%= appointment.animal().type %></td>
-            <td><%= appointment.vet().full_name() %></td>
-            <td><a href="appointments/<%= appointment.id %>">Details</a></td>
-          </tr>
-        <% end %>
-      </table>
-    <% else %>
-      <h3 class="warning_msg">No appointments in system</h3>
-    <% end %>
-  <div>
+      <% end %>
+    </table>
+  <% else %>
+    <h3 class="warning_msg">No appointments in system</h3>
+  <% end %>
 
 </section>
+<p></p><p></p>

@@ -1,7 +1,7 @@
 <p></p>
-<h1>Treatment History</h1>
 
-<h2>Animal Name: <%= @animal.name %> </h2>
+<h1>Animal Name: <%= @animal.name %> </h1>
+<h2>Treatment History</h2>
 
 <section class="container con-col">
 
@@ -21,7 +21,7 @@
           <td><%= treatment.details %></td>
 
           <td> <%= treatment.bill %></td>
-          <td> <%= treatment.tr_date %></td>
+          <td> <%= treatment.get_tr_date() %></td>
           <td>
             <% if treatment.paid == 'f'%>
                 <%= p "No" %>

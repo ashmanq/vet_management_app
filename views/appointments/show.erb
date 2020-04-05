@@ -1,0 +1,44 @@
+
+<h1>Appointment Details</h1>
+<h2><%= @appointment.vet.full_name %></h2>
+
+<section class="container con-col">
+  <div class="table_container">
+    <table>
+      <tr>
+        <th>Appointment Date</th>
+        <td><%= @appointment.get_app_date() %></td>
+      </tr>
+      <tr>
+        <th>Appointment Time</th>
+        <td><%= @appointment.app_time %></td>
+      </tr>
+      <tr>
+        <th>Animal Name</th>
+        <td><%= @appointment.animal().name %></td>
+      </tr>
+      <tr>
+        <th>Animal Type</th>
+        <td><%= @appointment.animal().type %></td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td><%= @appointment.notes %></td>
+      </tr>
+    </table>
+  </div>
+
+
+    <p></p>
+    <a class="item_select cell" href="/appointments/<%= @appointment.id %>/edit">
+        <label for="">Edit Details</label>
+    </a>
+    <a class="item_select cell" href="/appointments">
+        <label for="">Appointments List</label>
+    </a>
+    <p></p>
+    <a class="item_select cell btn_warning" href="/appointments/remove/<%= @appointment.id %>">
+        <label for="">Delete Appointment</label>
+    </a>
+
+</section>

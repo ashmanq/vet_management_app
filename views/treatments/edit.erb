@@ -11,7 +11,7 @@
     <input type="text" name="id" value="<%= @treatment.id %>" hidden>
 
     <label for="details">Treatment Details</label>
-    <input type="text" name="details" value="<%= @treatment.details %>" required>
+    <textarea name="details" rows="8" cols="40" required><%= @treatment.details %></textarea>
 
     <label for="bill">Cost</label>
     <input type="currency" name="bill" value="<%= @treatment.bill %>" required>

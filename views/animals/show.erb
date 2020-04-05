@@ -3,7 +3,7 @@
 <h2>Animal Name: <%= @animal.name %></h2>
 
 <section class="container con-col">
-  
+
   <table>
     <tr>
       <th>Type</th>
@@ -45,21 +45,26 @@
       </a>
   <% end %>
 
-  <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
-      <label for="">Owner Details</label>
-  </a>
-
   <a class="item_select cell" href="/treatments/animal/<%= @animal.id %>">
       <label for="">Treatments</label>
   </a>
 
+  <a class="item_select cell" href="/owners/<%= @animal.owner_id %>">
+      <label for="">Owner Details</label>
+  </a>
+
+  <a class="item_select cell" href="/owners">
+      <label for="">Return to Owners</label>
+  </a>
+
+
   <p></p>
   <!-- ----------------------------------------------------------------- -->
   <a class="item_select cell" href="/animals/<%= @animal.id %>/edit">
-      <label for="">Edit Animal Details</label>
+      <label for="">Edit Details</label>
   </a>
   <a class="item_select cell btn_warning" href="/animals/remove/<%= @animal.id %>">
-      <label for="">Remove Animal Details</label>
+      <label for="">Remove Animal</label>
   </a>
 
 </section>

@@ -40,17 +40,23 @@ p{
 
 .container {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-self: center;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   max-width: 80%;
   background-color: #32ad71;
   padding:20px;
   border-radius: 10px;
 }
 
-.con-col{flex-direction: column;}
+.con-col{
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  /* overflow-x: auto; */
+
+}
 
 
 
@@ -106,6 +112,10 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #2EE88E;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 li {

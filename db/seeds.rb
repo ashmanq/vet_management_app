@@ -18,7 +18,7 @@ vet1.save()
 vet2 = Vet.new('first_name' => "Elon", 'last_name' => "Musk")
 vet2.save()
 
-vet3 = Vet.new('first_name' => "Marolyn", 'last_name' => "Munro")
+vet3 = Vet.new('first_name' => "Marilyn", 'last_name' => "Munroe")
 vet3.save()
 
 owner1 = Owner.new('first_name' => 'James', 'last_name' => 'Khan',
@@ -79,10 +79,20 @@ treatment4 = Treatment.new('details' => 'some words', 'bill' => 100,
                             'animal_id' => animal2.id, 'tr_date'=> '01-03-2020', 'paid' => true)
 treatment4.save()
 
-appointment1 = Appointment.new('app_date'=> '04/04/2020', 'app_time'=>'07:00', 'animal_id'=> animal1.id , 'vet_id' => vet1.id)
+appointment1 = Appointment.new('app_date'=> '04/04/2020/', 'app_time'=>'07:00',
+                                'animal_id'=> animal1.id , 'vet_id' => vet1.id,
+                                'notes' => 'To be seen about sore eyes')
 appointment1.save()
-appointment1.save()
-appointment1.save()
+
+appointment2 = Appointment.new('app_date'=> '04/14/2020', 'app_time'=>'09:00',
+                                'animal_id'=> animal2.id , 'vet_id' => vet3.id,
+                                'notes' => 'Chronic silliness')
+appointment2.save()
+
+appointment3 = Appointment.new('app_date'=> '04/14/2020', 'app_time'=>'10:00',
+                                'animal_id'=> animal2.id , 'vet_id' => vet3.id,
+                                'notes' => 'Chronic silliness')
+appointment3.save()
 
 binding.pry
 nil

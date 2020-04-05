@@ -56,6 +56,13 @@ class Treatment
     SqlRunner.run(sql, values)
   end
 
+  # Change date format to UK format when displaying on site
+  def get_tr_date()
+    date_object = Date.strptime(@tr_date, '%Y-%m-%d')
+    format = date_object.strftime('%d/%m/%Y')
+    return format.to_s
+  end
+
   def self.delete_all()
     sql = "DELETE FROM treatments"
     SqlRunner.run(sql)
