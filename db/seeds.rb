@@ -79,5 +79,10 @@ treatment4 = Treatment.new('details' => 'some words', 'bill' => 100,
                             'animal_id' => animal2.id, 'tr_date'=> '01-03-2020', 'paid' => true)
 treatment4.save()
 
+appointment1 = Appointment.new('app_date'=> '04/04/2020', 'app_time'=>'07:00', 'animal_id'=> animal1.id , 'vet_id' => vet1.id)
+appointment1.save()
+appointment1.save()
+appointment1.save()
+
 binding.pry
 nil

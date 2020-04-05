@@ -22,7 +22,7 @@ tbody {
 }
 
 tr {
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 tr:nth-child(even) {
   background-color: #f2f2f2;

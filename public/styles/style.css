@@ -42,6 +42,7 @@ p{
   display: flex;
   flex-wrap: wrap;
   align-self: center;
+  align-items: center;
   justify-content: center;
   max-width: 80%;
   background-color: #32ad71;

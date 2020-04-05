@@ -1,0 +1,48 @@
+
+<p></p>
+<h1>Appointments</h1>
+<section class="container con-col">
+  <h2 class="container_text">Options</h2>
+
+  <div class="list">
+    <a class="item_select cell" href="/appointments/new">
+        <h3>Add Appointment</h3>
+        <img src="" alt="">
+    </a>
+  </div>
+</section>
+
+<p></p>
+<section class="container con-col">
+
+  <h2 class="container_text">Appointments List</h2>
+
+  <div class="list">
+    <% if @appointments != nil %>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Animal Name</th>
+          <th>Animal Type</th>
+          <th>Vet Name</th>
+          <th>Click For Details</th>
+        </tr>
+        <!-- We cycle through all the appointments -->
+        <% for appointment in @appointments %>
+          <tr>
+            <td><%= appointment.app_date %></td>
+            <td><%= appointment.app_time %></td>
+            <td><%= appointment.animal().name %></td>
+            <td><%= appointment.animal().type %></td>
+            <td><%= appointment.vet().full_name() %></td>
+            <td><a href="appointments/<%= appointment.id %>">Details</a></td>
+          </tr>
+        <% end %>
+      </table>
+    <% else %>
+      <h3 class="warning_msg">No appointments in system</h3>
+    <% end %>
+  <div>
+
+</section>
