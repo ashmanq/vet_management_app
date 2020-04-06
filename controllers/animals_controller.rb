@@ -21,10 +21,11 @@ get '/animals/new' do
   erb(:"animals/new")
 end
 
-# ADD NEW AMIMAL TO SPECIFIC OWNER
+# ADD new animal to specific owner
 get '/animals/new/:customer_id' do
   customer_id = params['customer_id']
   @vets = Vet.find_all()
+  # Using same erb file but with only one rowner result
   @owners = Owner.find(customer_id)
   erb(:"animals/new")
 end

@@ -26,11 +26,15 @@
 
       <label for="owner_id">Owner</label>
       <select name="owner_id" required>
+        <% if @owners.kind_of?(Array) %>
           <option value="">--Please choose an option--</option>
           <% for owner in @owners %>
              <option value="<%= owner.id %>">
               <%= owner.full_name %></option>
           <% end %>
+        <% else %>
+          <option value="<%= @owners.id %>"selected"><%= @owners.full_name %></option>
+        <% end %>
       </select>
 
       <input class="btn cell" type='submit' value="Add">

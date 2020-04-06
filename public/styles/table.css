@@ -1,14 +1,16 @@
 table {
-  /* display: flex; */
-  flex-direction: column;
-  padding: 10px;
   text-align: center;
-
+  /* padding:20px; */
+  margin:auto;
 }
 
 .table_container {
   display:flex;
-  overflow-x: auto;
+  align-self: center;
+  width: 100%;
+  overflow-x:auto;
+  /* background-color: #32ad71; */
+  border-radius: 10px;
 }
 tbody {
   align-items: center;
@@ -25,9 +27,11 @@ tbody {
   text-decoration: none;
 }
 
+td, th {
+  padding:8px;
+}
 tr {
   font-size: 1.4em;
-  padding:10px;
 }
 tr:nth-child(even) {
   background-color: #f2f2f2;
