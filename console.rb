@@ -5,6 +5,7 @@ require_relative('./models/owner')
 require_relative('./models/checking')
 require_relative('./models/treatment')
 require_relative('./models/appointment')
+require_relative('./models/search')
 
 binding.pry
 nil

@@ -6,6 +6,7 @@ require_relative('controllers/owners_controller')
 require_relative('controllers/checkings_controller')
 require_relative('controllers/treatments_controller')
 require_relative('controllers/appointments_controller')
+require_relative('controllers/search_controller')
 also_reload('./models/*')
 
 

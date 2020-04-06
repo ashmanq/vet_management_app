@@ -38,7 +38,7 @@
           </select>
 
       <% else %>
-      <input type="text" name="owner_name" value="<%= @owners.first().full_name() %>" disabled> %>
+      <input type="text" name="owner_name" value="<%= @owners.full_name() %>" disabled> %>
 
       <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
       <input type="text" name="owner_id" value="<%= @owners.id %>" hidden>

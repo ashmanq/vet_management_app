@@ -1,6 +1,6 @@
 <h1>Add Appointment</h1>
 <h2><%= @vet.full_name() %></h2>
-
+<% if @animals != nil %>
 <form class="list" action="/appointments" method="POST">
   <fieldset>
 
@@ -27,8 +27,9 @@
 
     <input class="btn cell" type='submit' value="Add">
   </fieldset>
-
-
+<% else %>
+  <h2 class="warning_msg">Can't add appointment as no animals registered.</h2>
+<% end %>
 </form>
 <p></p>
 <div class="list">

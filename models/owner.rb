@@ -26,7 +26,7 @@ class Owner
            )
            VALUES
            (
-             $1, $2, $3, $4, $5
+             LOWER($1), LOWER($2), LOWER($3), $4, $5
            )
            RETURNING id"
     values = [@first_name, @last_name, @address, @tel_no, @registered]
@@ -44,7 +44,7 @@ class Owner
             )
             =
             (
-              $1, $2, $3, $4, $5
+              LOWER($1), LOWER($2), LOWER($3), $4, $5
             )
             WHERE id = $6"
       values = [@first_name, @last_name, @address, @tel_no, @registered, @id]
@@ -89,7 +89,7 @@ class Owner
   end
 
   def full_name()
-    return "#{@first_name} #{@last_name}"
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end
 
   def animals()

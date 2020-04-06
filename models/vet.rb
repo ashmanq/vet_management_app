@@ -13,7 +13,7 @@ class Vet
   end
 
   def full_name()
-    return "#{first_name} #{last_name}"
+    return "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   def save()
@@ -24,7 +24,7 @@ class Vet
            )
            VALUES
            (
-             $1, $2
+             LOWER($1), LOWER($2)
            )
            RETURNING id"
     values = [@first_name, @last_name]
@@ -39,7 +39,7 @@ class Vet
             )
             =
             (
-              $1, $2
+              LOWER($1), LOWER($2)
             )
             WHERE id = $3"
       values = [@first_name, @last_name, @id]

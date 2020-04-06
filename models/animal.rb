@@ -10,8 +10,8 @@ class Animal
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
-    @type = options['type']
+    @name = options['name'].capitalize
+    @type = options['type'].capitalize
     @dob = options['dob']
     @owner_id = options['owner_id'].to_i
     @vet_id = options['vet_id'].to_i
@@ -38,7 +38,7 @@ class Animal
              )
              VALUES
              (
-               $1, $2, $3, $4, $5
+               LOWER($1), LOWER($2), $3, $4, $5
              )
              RETURNING id"
       values = [@name, @type, @dob, @owner_id, @vet_id]
@@ -59,7 +59,7 @@ class Animal
             )
             =
             (
-              $1, $2, $3, $4, $5
+              LOWER($1), LOWER($2), $3, $4, $5
             )
             WHERE id = $6"
       values = [@name, @type, @dob, @owner_id, @vet_id, @id]
