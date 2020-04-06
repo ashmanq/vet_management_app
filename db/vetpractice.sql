@@ -46,7 +46,7 @@ CREATE TABLE treatments (
   id SERIAL PRIMARY KEY,
   tr_date DATE,
   details TEXT,
-  bill NUMERIC,
+  bill DECIMAL,
   paid BOOLEAN,
   animal_id INT REFERENCES animals(id) ON DELETE CASCADE
 );

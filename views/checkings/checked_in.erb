@@ -1,21 +1,30 @@
 <p></p>
-<h1>Animals Currently Checked In</h1>
+<h1>Animals Checked In</h1>
 <p></p>
-<section class="containers con-col">
-  <!-- <h2 class="container_text">Animals Checked Into Practice</h2> -->
-  <h3 class="container_text">Click name below for details</h3>
+<section class="container con-col">
 
-  <div class="list">
-    <% if @animals != nil %>
+<h3 class="container_text">Click name below for details</h3>
+
+  <% if @animals != nil %>
+    <div class="lsist">
       <% for animal in @animals %>
         <a class="item_select cell" href="/animals/<%= animal.id %>">
             <h3> <%= animal.name %> </h3>
             <h4> <%= animal.type %> </h4>
         </a>
       <% end %>
-      <% else %>
-        <h3 class="warning_msg">No animals currently checked in</h3>
-    <% end %>
+    <div>
+  <% else %>
+    <h2 class="warning_msg">No animals currently checked in</h2>
+    <p></p>
+  <% end %>
 
-  <div>
 </section>
+<p></p>
+<section class="list">
+  <a class="item_select cell" href="/animals">
+      <label for="">Back to List</label>
+  </a>
+
+</section>
+<p></p>

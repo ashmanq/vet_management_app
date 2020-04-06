@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require('bigdecimal/util')
 
 class Treatment
 
@@ -8,7 +9,8 @@ class Treatment
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @details = options['details']
-    @bill = options['bill']
+    # We store the number as a float to 2 decimal places
+    @bill = '%.2f' % options['bill']
     @tr_date = options['tr_date']
     @paid = options['paid']
     @animal_id = options['animal_id'].to_i

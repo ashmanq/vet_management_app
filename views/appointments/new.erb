@@ -14,7 +14,8 @@
 
     <label for="animal_id">Animal</label>
     <% if @animals != nil %>
-      <select name="animal_id" id="animal_id">
+      <select name="animal_id" id="animal_id" required>
+        <option value="">--Please choose an option--</option>
           <% for animal in @animals %>
             <option value="<%= animal.id %>"> <%= animal.name%></option>
           <% end %>

@@ -116,7 +116,8 @@ class Owner
     values = [@id]
     result = SqlRunner.run(sql, values)
     return nil if result.first == nil
-    return result.first['sum']
+    # We return a float to 2 decimal places
+    return '%.2f' % result.first['sum'].to_f
   end
 
 end

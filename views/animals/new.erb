@@ -15,8 +15,9 @@
       <input type="date" name="dob" placeholder="DD/MM/YY" required>
 
       <label for="vet_id">Vet</label>
-      <select name="vet_id">
+      <select name="vet_id" required>
         <% if @vets != nil %>
+        <option value="">--Please choose an option--</option>
           <% for vet in @vets %>
           <option value="<%= vet.id %>"><%= vet.full_name %></option>
           <% end %>
@@ -24,21 +25,13 @@
       </select>
 
       <label for="owner_id">Owner</label>
-        <% if @owners.kind_of?(Array)%>
-          <select name="owner_id">
-            <%# <% if @owners != nil %> %>
-                <% for owner in @owners %>
-                   <option value="<%= owner.id %>">
-                    <%= owner.full_name %></option>
-                <% end %>
-            <%# <% end %> %>
-          </select>
-      <% else %>
-      <input type="text" name="owner_name" value="<%= @owners.full_name() %>" disabled> %>
-
-      <!-- The following line of code is needed to send the owner id along with the form post request. It's hidden from the user -->
-      <input type="text" name="owner_id" value="<%= @owners.id %>" hidden>
-      <% end %>
+      <select name="owner_id" required>
+          <option value="">--Please choose an option--</option>
+          <% for owner in @owners %>
+             <option value="<%= owner.id %>">
+              <%= owner.full_name %></option>
+          <% end %>
+      </select>
 
       <input class="btn cell" type='submit' value="Add">
     </fieldset>

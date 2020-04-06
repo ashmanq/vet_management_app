@@ -12,7 +12,8 @@
     <input type="text" name="query" placeholder="Enter Search Term" required>
 
     <label for="type">Search Type</label>
-    <select name="type" id="type">
+    <select name="type" id="type" required>
+      <option value="">--Choose an option--</option>
       <option value="animal">Animals</option>
       <option value="vet">Vets</option>
       <option value="owner">Owners</option>
@@ -28,6 +29,8 @@
 <p></p>
 
 <section class="container con-col">
+  <div class="cell">
   <p>This search function allows you to search for owners or vets by name; or search
      for animals by name/type.</p>
+  </div>
 </section>

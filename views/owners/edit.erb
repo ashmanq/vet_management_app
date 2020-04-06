@@ -18,7 +18,8 @@
     <input type="text" name="tel_no" placeholder="Tel No" value="<%= @owner.tel_no %>">
 
     <label for="registered">Registered</label>
-    <select class="" name="registered">
+    <select class="" name="registered" required>
+      <option value="">--Please choose an option--</option>
       <option value="0" <% if @owner.registered == 'f' %> <%= p "selected "%> <% end %>>No</option>
       <option value="1" <% if @owner.registered == 't' %> <%= p "selected "%> <% end %>>Yes</option>
     </select>
