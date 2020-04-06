@@ -8,10 +8,8 @@
       <label for="name">Name</label>
       <input type="text" name="name" placeholder="Name" required>
 
-
       <label for="type">Type</label>
       <input type="text" name="type" placeholder="Type" required>
-
 
       <label for="dob">DoB</label>
       <input type="date" name="dob" placeholder="DD/MM/YY" required>
@@ -26,7 +24,6 @@
       </select>
 
       <label for="owner_id">Owner</label>
-
         <% if @owners.kind_of?(Array)%>
           <select name="owner_id">
             <%# <% if @owners != nil %> %>
@@ -36,7 +33,6 @@
                 <% end %>
             <%# <% end %> %>
           </select>
-
       <% else %>
       <input type="text" name="owner_name" value="<%= @owners.full_name() %>" disabled> %>
 
@@ -49,6 +45,7 @@
 
   </form>
 <% else %>
+
   <h2 class="warning_msg">No owners and/or vets in database to register animals to</h2>
 
 <% end %>

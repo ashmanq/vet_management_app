@@ -7,7 +7,7 @@
 <form class="list" action="/appointments/<%= @appointment.id %>" method="POST">
   <fieldset>
 
-    <!-- id for appointment is required but is hidden from user so they dont edit it -->
+    <!-- id for animal, vet and appointment is required but is hidden from user so they dont edit it -->
     <input type="text" name="animal_id" value="<%= @appointment.animal_id %>" hidden>
     <input type="text" name="id" value="<%= @appointment.id %>" hidden>
     <input type="text" name="vet_id" value="<%= @appointment.vet_id %>" hidden>

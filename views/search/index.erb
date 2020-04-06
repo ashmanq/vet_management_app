@@ -1,24 +1,33 @@
 <p></p>
 <h1>Search</h1>
 
+
+<p></p>
+
 <section class="container">
 
-<form action="/search" method="POST">
+  <form action="/search" method="POST">
 
-  <label for="query">Search Query</label>
-  <input type="text" name="query" placeholder="Enter Search Term">
+    <label for="query">Search Query</label>
+    <input type="text" name="query" placeholder="Enter Search Term" required>
 
-  <label for="type">Search Type</label>
-  <select name="type" id="type">
-    <option value="animal">Animals</option>
-    <option value="vet">Vets</option>
-    <option value="owner">Owners</option>
+    <label for="type">Search Type</label>
+    <select name="type" id="type">
+      <option value="animal">Animals</option>
+      <option value="vet">Vets</option>
+      <option value="owner">Owners</option>
 
-  </select>
+    </select>
 
-  <input class="btn cell" type='submit' value="Search">
+    <input class="btn cell" type='submit' value="Search">
 
+  </form>
 
-</form>
+</section>
 
+<p></p>
+
+<section class="container con-col">
+  <p>This search function allows you to search for owners or vets by name; or search
+     for animals by name/type.</p>
 </section>

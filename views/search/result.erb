@@ -3,32 +3,52 @@
 <p></p>
 <section class="container con-col">
 
-<h2 class="container_text">Search Type: <%= @type%></h2>
-<h2 class="container_text">Query:<%= @query%></h2>
+<h2 class="container_text">Search Type: <%= @type.capitalize%></h2>
+<h3 class="container_text">Query: <%= @query%></h3>
+
 
 
 <!-- We check to see if results returns nil meaning no resuls found -->
 <% if @results != nil %>
-
-<!-- If there are any results we then check to see what type of object was
-     returned create a table for that object-->
-<% class_type =  @results.first().class().name %>
-<% case class_type
-when "Owner"%>
-  <%= p 'owner'  %>
+<h3 class="container_text"> No of results: <%= @results.size%></h3>
+<p></p>
+<div class="list">
+  <!-- If there are any results we then check to see what type of object was
+       returned create a table for that object-->
+  <% class_type =  @results.first().class().name %>
+  <% case class_type
+    when "Owner"%>
+    <% for owner in @results %>
+      <a class="item_select cell" href="/owners/<%= owner.id %>">
+          <h3> <%= owner.full_name %> </h3>
+      </a>
+    <% end %>
   <% when "Animal"%>
-  <%= p 'animal'  %>
+    <% for animal in @results %>
+      <a class="item_select cell" href="/animals/<%= animal.id %>">
+          <h3 class="btn_title"> <%= animal.name %> </h3>
+          <h3 class="btn_title"> <%= animal.type %> </h3>
+      </a>
+    <% end %>
   <% when "Vet"%>
-  <%= p 'vet'  %>
+  <% for vet in @results %>
+    <a class="item_select cell" href="/vets/<%= vet.id %>">
+        <h3 class="btn_title"> <%= vet.full_name %> </h3>
+    </a>
+  <% end %>
   <% else %>
-  <%= p 'unknown class' %>
-<% end %>
+    <%= p 'Error: Unknown search type!' %>
+  <% end %>
+</div>
 
 
 <% else %>
 <p></p>
 <p>Found no results</p>
 <% end %>
-
+<p></p>
+<a class="item_select cell" href="/search">
+    <label for="">Search Again</label>
+</a>
 
 </section>

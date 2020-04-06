@@ -7,12 +7,10 @@
   <div class="list">
     <a class="item_select cell" href="/animals/new">
         <h3 class="btn_title">Register Animal</h3>
-        <img src="" alt="">
     </a>
 
     <a class="item_select cell" href="/checkings">
         <h3 class="btn_title">Checked In</h3>
-        <img src="" alt="">
     </a>
 
   </div>
@@ -28,8 +26,7 @@
       <% for animal in @animals %>
         <a class="item_select cell" href="/animals/<%= animal.id %>">
             <h3 class="btn_title"> <%= animal.name %> </h3>
-            <h3 class="btn_title"> <%= animal.type %> </h3>
-            <img src="" alt="">
+            <h4 class="btn_title"> <%= animal.type %> </h4>
         </a>
       <% end %>
       <% else %>

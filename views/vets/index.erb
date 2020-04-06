@@ -6,7 +6,6 @@
   <div class="list">
     <a class="item_select cell" href="/vets/new">
         <h3 class="btn_title">Add Vet</h3>
-        <img src="" alt="">
     </a>
   </div>
 </section>
@@ -23,7 +22,6 @@
       <% for vet in @vets %>
         <a class="item_select cell" href="/vets/<%= vet.id %>">
             <h3 class="btn_title"> <%= vet.full_name %> </h3>
-            <img src="" alt="">
         </a>
       <% end %>
       <% else %>

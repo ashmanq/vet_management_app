@@ -10,8 +10,7 @@
       <% for animal in @animals %>
         <a class="item_select cell" href="/animals/<%= animal.id %>">
             <h3> <%= animal.name %> </h3>
-            <h3> <%= animal.type %> </h3>
-            <img src="" alt="">
+            <h4> <%= animal.type %> </h4>
         </a>
       <% end %>
       <% else %>
