@@ -26,14 +26,16 @@
 
 <h2>Responsible for:</h2>
 <section class="container">
-  <% if @animals != nil %>
-    <% for animal in @animals %>
-      <a class="item_select cell" href="/animals/<%= animal.id %>">
-          <h2> <%= animal.name %> </h2>
-          <h4> <%= animal.type %> </h4>
-      </a>
+  <div class="list">
+    <% if @animals != nil %>
+      <% for animal in @animals %>
+        <a class="item_select cell" href="/animals/<%= animal.id %>">
+            <h2> <%= animal.name %> </h2>
+            <h4> <%= animal.type %> </h4>
+        </a>
+      <% end %>
+    <% else %>
+    <h2 class="warning_msg" >Not responsible for any animals.</h2>
     <% end %>
-  <% else %>
-  <h2 class="warning_msg" >Not responsible for any animals.</h2>
-  <% end %>
+  </div>
 </section>

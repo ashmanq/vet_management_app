@@ -61,11 +61,12 @@
     </a>
 
 </section>
+<p></p>
+<p></p>
+<section class="container con-col">
+<h2 class="container_text">Owner of:</h2>
 
-
-<h2 class="btn_title">Owner of:</h2>
-
-<section class="container">
+<div class="list">
   <% if @animals != nil %>
     <% for animal in @animals %>
       <a class="item_select cell" href="/animals/<%= animal.id %>">
@@ -77,4 +78,5 @@
   <% else %>
   <h2 class="warning_msg">Doesn't have any pets in system.</h2>
   <% end %>
+</div>
 </section>

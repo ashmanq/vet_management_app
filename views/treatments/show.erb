@@ -5,52 +5,48 @@
 
 <section class="container con-col">
 
-    <% if @treatments != nil %>
-      <table>
-        <tr>
-          <th>Treatment Details</th>
-          <th>Cost (£)</th>
-          <th>Date</th>
-          <th>Paid</th>
-          <th>  </th>
-        </tr>
-        <% for treatment in @treatments %>
+<% if @treatments != nil %>
+  <table class="table_container">
+    <tr>
+      <th>Treatment Details</th>
+      <th>Cost (£)</th>
+      <th>Date</th>
+      <th>Paid</th>
+      <th>  </th>
+    </tr>
+    <% for treatment in @treatments %>
+      <tr>
+        <td><%= treatment.details %></td>
+        <td><%= treatment.bill %></td>
+        <td><%= treatment.get_tr_date() %></td>
+        <td>
+          <% if treatment.paid == 'f'%>
+            <%= p "No" %>
+          <% else %>
+            <%= p "Yes" %>
+          <% end %>
+        </td>
 
-          <tr>
+        <td> <a href="/treatments/<%= treatment.id%>/edit"</a>Edit</td>
+      </tr>
+    <% end %>
+  </table>
 
-          <td><%= treatment.details %></td>
-
-          <td> <%= treatment.bill %></td>
-          <td> <%= treatment.get_tr_date() %></td>
-          <td>
-            <% if treatment.paid == 'f'%>
-                <%= p "No" %>
-              <% else %>
-                <%= p "Yes" %>
-              <% end %>
-            </td>
-
-          <td> <a href="/treatments/<%= treatment.id%>/edit"</a>Edit</td>
-          </tr>
-
-        <% end %>
-      </table>
-
-      <p></p>
+  <p></p>
 
 
-      <% else %>
-        <h3 class="warning_msg">No treatments listed in system.</h3>
-      <% end %>
-      <!-- We only add treatments if owner is registered. -->
-      <% if @animal.owner().registered == 't' %>
-      <a class="item_select cell" href="/treatments/new/<%= @animal.id %>">
-          <label for="">Add Treatment</label>
-      </a>
-      <% end %>
+  <% else %>
+    <h3 class="warning_msg">No treatments listed in system.</h3>
+  <% end %>
+  <!-- We only add treatments if owner is registered. -->
+  <% if @animal.owner().registered == 't' %>
+  <a class="item_select cell" href="/treatments/new/<%= @animal.id %>">
+      <label for="">Add Treatment</label>
+  </a>
+  <% end %>
 
-    <a class="item_select cell" href="/animals/<%= @animal.id %>">
-        <label for="">Back To Pet Details</label>
-    </a>
+  <a class="item_select cell" href="/animals/<%= @animal.id %>">
+      <label for="">Back To Pet Details</label>
+  </a>
 
 </section>
