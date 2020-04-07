@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 # Dr Dolittle's Vet Management App
 
 This project is a Vet Management App created by Ashir Qureshi for his CodeClan individual project.
@@ -60,9 +71,9 @@ The website consists of 5 main pages and a search facility accessible by links o
                      owner (Address, Tel No, Registration status, Vets Bill).
               
 4. Search - The search page allows you to search the database for the following:
-            - Animals, searching by name or type.
-            - Vets, searching by name.
-            - Owners, searching by name.
+            1. Animals, searching by name or type.
+            2. Vets, searching by name.
+            3. Owners, searching by name.
                      
 5. Appointments - This page lists all appointments for vets in the practice.
 
