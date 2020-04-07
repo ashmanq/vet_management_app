@@ -1,6 +1,6 @@
 
 <h1>Appointment Details</h1>
-<h2>Vet: <%= @appointment.vet.full_name %></h2>
+<h2 class="capitals">Vet: <%= @appointment.vet.full_name %></h2>
 
 <section class="container con-col">
   <div class="table_container">
@@ -15,11 +15,11 @@
       </tr>
       <tr>
         <th>Animal Name</th>
-        <td><%= @appointment.animal().name %></td>
+        <td class="capitals"><%= @appointment.animal().name %></td>
       </tr>
       <tr>
         <th>Animal Type</th>
-        <td><%= @appointment.animal().type %></td>
+        <td class="capitals"><%= @appointment.animal().type %></td>
       </tr>
       <tr>
         <th>Notes</th>

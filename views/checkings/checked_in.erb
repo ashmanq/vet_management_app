@@ -6,11 +6,11 @@
 <h3 class="container_text">Click name below for details</h3>
 
   <% if @animals != nil %>
-    <div class="lsist">
+    <div class="list">
       <% for animal in @animals %>
         <a class="item_select cell" href="/animals/<%= animal.id %>">
-            <h3> <%= animal.name %> </h3>
-            <h4> <%= animal.type %> </h4>
+            <h3 class="capitals"> <%= animal.name %> </h3>
+            <h4 class="capitals"> <%= animal.type %> </h4>
         </a>
       <% end %>
     <div>

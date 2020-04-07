@@ -3,7 +3,7 @@
 <p></p>
 <section class="container con-col">
 
-<h2 class="container_text">Search Type: <%= @type.capitalize%></h2>
+<h2 class="container_text capitals">Search Type: <%= @type%></h2>
 <h3 class="container_text">Query: <%= @query%></h3>
 
 
@@ -20,20 +20,20 @@
     when "Owner"%>
     <% for owner in @results %>
       <a class="item_select cell" href="/owners/<%= owner.id %>">
-          <h3> <%= owner.full_name %> </h3>
+          <h3 class="capitals"> <%= owner.full_name %> </h3>
       </a>
     <% end %>
   <% when "Animal"%>
     <% for animal in @results %>
       <a class="item_select cell" href="/animals/<%= animal.id %>">
-          <h3 class="btn_title"> <%= animal.name %> </h3>
-          <h3 class="btn_title"> <%= animal.type %> </h3>
+          <h3 class="btn_title capitals"> <%= animal.name %> </h3>
+          <h3 class="btn_title capitals"> <%= animal.type %> </h3>
       </a>
     <% end %>
   <% when "Vet"%>
   <% for vet in @results %>
     <a class="item_select cell" href="/vets/<%= vet.id %>">
-        <h3 class="btn_title"> <%= vet.full_name %> </h3>
+        <h3 class="btn_title capitals"> <%= vet.full_name %> </h3>
     </a>
   <% end %>
   <% else %>

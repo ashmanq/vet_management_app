@@ -1,13 +1,13 @@
 
 <h1>Owner Details</h1>
-<h2><%= @owner.full_name %></h2>
+<h2 class="capitals"><%= @owner.full_name %></h2>
 
 <section class="container con-col">
 
     <table class="table_container">
       <tr>
         <th>Address</th>
-        <td><%= @owner.address.capitalize %></td>
+        <td class="capitals"><%= @owner.address %></td>
       </tr>
       <tr>
         <th>Tel No</th>

@@ -1,8 +1,8 @@
 <p></p>
 
 <h2>Edit Appointment Details</h2>
-<h2>Vet Name: <%= @appointment.vet().full_name %></h2>
-<h2>Animal Name: <%= @appointment.animal().name %></h2>
+<h2 class="capitals">Vet Name: <%= @appointment.vet().full_name %></h2>
+<h2 class="capitals">Animal Name: <%= @appointment.animal().name %></h2>
 
 <form class="list" action="/appointments/<%= @appointment.id %>" method="POST">
   <fieldset>
@@ -13,7 +13,7 @@
     <input type="text" name="vet_id" value="<%= @appointment.vet_id %>" hidden>
 
     <label for="app_date">Date</label>
-    <input type="date" name="app_date" value="<%= @appointment.app_date %>" required>
+    <input type="date" name="app_date" value="<%= @appointment.app_date %>" min="<%= Date.today %>" required>
 
     <label for="app_time">Time</label>
     <input type="time" name="app_time" value="<%= @appointment.app_time %>" required>

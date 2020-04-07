@@ -7,7 +7,7 @@
     <input type="text" name="vet_id" value="<%= @vet.id %>" hidden>
 
     <label for="app_date">Date</label>
-    <input type="date" name="app_date" required>
+    <input type="date" name="app_date" min="<%= Date.today %>" required>
 
     <label for="app_time">Time</label>
     <input type="time" name="app_time" required>

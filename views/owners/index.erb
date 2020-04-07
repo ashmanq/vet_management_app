@@ -21,7 +21,7 @@
     <% if @owners != nil %>
       <% for owner in @owners %>
         <a class="item_select cell" href="/owners/<%= owner.id %>">
-            <h3> <%= owner.full_name %> </h3>
+            <h3 class="capitals"> <%= owner.full_name %> </h3>
         </a>
       <% end %>
     <% else %>

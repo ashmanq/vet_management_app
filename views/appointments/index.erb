@@ -20,9 +20,9 @@
         <tr>
           <td><%= appointment.get_app_date() %></td>
           <td><%= appointment.app_time[0,5] %></td>
-          <td><%= appointment.animal().name %></td>
-          <td><%= appointment.animal().type %></td>
-          <td><%= appointment.vet().full_name() %></td>
+          <td class="capitals"><%= appointment.animal().name %></td>
+          <td class="capitals"><%= appointment.animal().type %></td>
+          <td class="capitals"><%= appointment.vet().full_name() %></td>
           <td><a href="appointments/<%= appointment.id %>">Details</a></td>
         </tr>
       <% end %>

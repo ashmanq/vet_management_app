@@ -26,8 +26,8 @@
     <% if @animals != nil %>
       <% for animal in @animals %>
         <a class="item_select cell" href="/animals/<%= animal.id %>">
-            <h3 class="btn_title"> <%= animal.name %> </h3>
-            <h4 class="btn_title"> <%= animal.type %> </h4>
+            <h3 class="btn_title capitals"> <%= animal.name %> </h3>
+            <h4 class="btn_title capitals"> <%= animal.type %> </h4>
         </a>
       <% end %>
       <% else %>
