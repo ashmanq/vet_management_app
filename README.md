@@ -2,14 +2,15 @@
 
 This project is a Vet Management App created by Ashir Qureshi for his CodeClan individual project.
 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
 
+
 ### Prerequisites
 
 What things you need to install the software and how to install them:
-
 
 1. You will need to install PostGreSQL to carry out database queries:
 ```
@@ -40,7 +41,6 @@ psql -d vetpractice -f db/vetpractice.sql
 ruby db/seed.rb
 ````
 
-
 ## Running the App
 
 To run the app use the followin command:
@@ -48,13 +48,32 @@ To run the app use the followin command:
 ruby app.rb
 ```
 
+## Instructions on how to use the app
+
+The website consists of 5 main pages and a search facility accessible by links on the navigation bar.. These are:
+
+1. Animals      -    This will take you to a page listing all animals on the apps records along with options to 
+                     either register a new animal or see a view of which animals are currently checked into the vets
+                     practice. Clicking on any animal listed will give you details about the animal (name, type, DoB, Vet 
+                     Checked In/Out).
+              
+2. Vets         -    This page lists all vets currently listed at the practice. You also get an option to add a new vet to                        the practice. Clicking on a Vet will give you details about that Vet (name, animals under their care).
+
+3. Owners       -    This page lists all pet owners on the system. Clicking on an owner will take you to details about that
+                     owner (Address, Tel No, Registration status, Vets Bill).
+              
+4. Search       -    The search page allows you to search the database for the following:
+                     - Animals, searching by name or type.
+                     - Vets, searching by name.
+                     - Owners, searching by name.
+                     
+5. Appointments -    This page lists all appointments for vets in the practice.
 
 ## Built With
 
 * [Ruby](http://www.ruby-lang.org) - The programming language used for logic/interface
 * [PSQL](https://www.postgresql.org/) - Database management
 * [Sinatra](https://sinatrarb.com) - To create a local web server
-
 
 ## Authors
 
