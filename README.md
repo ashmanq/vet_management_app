@@ -82,6 +82,7 @@ The website consists of 5 main pages and a search facility accessible by links o
                      
 - Appointments
   - This page lists all appointments for vets in the practice.
+
 ![Appointments Page](screenshots/appointments.png)
 
 ## Built With
