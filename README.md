@@ -58,30 +58,30 @@ ruby app.rb
 
 The website consists of 5 main pages and a search facility accessible by links on the navigation bar.. These are:
 
-## Animals
+### Animals
 This will take you to a page listing all animals on the apps records along with options to either register a new animal or see a view of which animals are currently checked into the vets practice. Clicking on any animal listed will give you details about the animal (name, type, DoB, Vet Checked In/Out).
 
 ![Animals Page](screenshots/animals.png)
 
-## Vets
+### Vets
 This page lists all vets currently listed at the practice. You also get an option to add a new vet to the practice. Clicking on a Vet will give you details about that Vet (name, animals under their care).
 
 ![Vets Page](screenshots/vets.png)
 
-## Owners
+### Owners
 This page lists all pet owners on the system. Clicking on an owner will take you to details about that owner (Address, Tel No, Registration status, Vets Bill).
 
 ![Owners Page](screenshots/owners.png)
-              
-## Search
+
+### Search
 The search page allows you to search the database for the following:
 - Animals, searching by name or type.
 - Vets, searching by name.
 - Owners, searching by name.
 
 ![Search Page](screenshots/search.png)
-                     
-## Appointments
+
+### Appointments
 The appointments page lists all appointments for vets in the practice.
 
 ![Appointments Page](screenshots/appointments.png)
