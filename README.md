@@ -1,5 +1,5 @@
 <p align="center">
-<image  src="public/images/logo.svg">
+<image width="300px" height="300px" src="public/images/logo.svg">
   </p>
 
 # Dr Dolittle's Vet Management App
