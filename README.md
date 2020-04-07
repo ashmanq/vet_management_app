@@ -1,4 +1,4 @@
-![Logo] (public/images/logo.png)
+![Logo](public/images/VetLogo.png)
 
 # Dr Dolittle's Vet Management App
 
