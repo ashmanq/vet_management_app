@@ -3,7 +3,7 @@ form {
   flex-wrap: wrap;
   flex-direction: column;
   /* font-size: 1.0em; */
-  width:80%;
+  width:100%;
   align-self: center;
   align-items: center;
   padding-top: 20px;
@@ -40,10 +40,10 @@ textarea{
 
 
 input[type=submit], .delete_button{
+  -webkit-appearance: none;
   margin:2rem;
   padding:8px;
   border:5px;
-  /* font-size: 1.2rem; */
   background-color: #2EE88E;
   width:80%;
   text-align: center;
