@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-      - export DEPLOYPATH=/home/wwwashma/public_html/projects/vet_app/
+      - export DEPLOYPATH=/home/wwwashma/projects/vet_app/
       - /bin/cp -R controllers $DEPLOYPATH
       - /bin/cp -R db $DEPLOYPATH
       - /bin/cp -R models $DEPLOYPATH
