@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+      - export DEPLOYPATH=/home/wwwashma/public_html/projects/vet_app/
+      - /bin/cp -R controllers $DEPLOYPATH
+      - /bin/cp -R db $DEPLOYPATH
+      - /bin/cp -R models $DEPLOYPATH
+      - /bin/cp -R public $DEPLOYPATH
+      - /bin/cp -R views $DEPLOYPATH
+      - /bin/cp app.rb $DEPLOYPATH
+      - /bin/cp console.rb $DEPLOYPATH
