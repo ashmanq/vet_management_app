@@ -11,6 +11,7 @@ Animal.delete_all()
 Owner.delete_all()
 Checking.delete_all()
 Treatment.delete_all()
+Appointment.delete_all()
 
 vet1 = Vet.new('first_name' => "James", 'last_name' => "Sullivan")
 vet1.save()
