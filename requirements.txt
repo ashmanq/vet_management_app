@@ -1,0 +1,9 @@
+Required Gems
+
+The following Ruby Gems are required for this app:
+
+sinatra - Ruby App used for HTTP routing. Was installed using module installer.
+sinatra-Base - Needed as code was refactored to a modular format which uses Sinatra-Base
+sinatra-contrib - Used by App and required for running on the website. Was installed using module installer.
+mysql2 - A Ruby Gem that required IT support to install as the module installer gave errors when trying to install
+bigdecimal - Used by mysql2. Had to be installed by IT support due to errors when using the module installer.
